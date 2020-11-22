@@ -1,0 +1,47 @@
+Package: mvdf
+Type: Package
+Title: A Minimum Viable Data Format for 3D Rendering via Blender
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Michael",
+           family = "Mahoney",
+           role = c("aut", "cre"),
+           email = "mike.mahoney.218@gmail.com",
+           comment = c(ORCID = "0000-0003-2402-304X"))
+Description: A small, self-contained, minimum viable data format providing a 
+    standard interface for using R as a front-end for the Blender 3D rendering
+    program. The core approach centers around an S4 class, 'mvdf', with getter,
+    setter, and validation methods designed to be extended for more specific 
+    rendering approaches.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.1.1
+Config/testthat/edition: 3
+VignetteBuilder: knitr
+Suggests: 
+    knitr,
+    codemetar,
+    pkgdown,
+    rmarkdown,
+    lintr,
+    styler,
+    testthat
+SystemRequirements: 
+    Blender
+Imports: 
+    methods,
+    rlang
+Collate: 
+    'mvdf.R'
+    'appendix.R'
+    'as.data.frame.R'
+    'assign.R'
+    'create_blender_endmatter.R'
+    'create_blender_frontmatter.R'
+    'execute_render.R'
+    'get_mvdf.R'
+    'make_mvdf.R'
+    'metadata.R'
+    'set_mvdf.R'
+    'show.R'

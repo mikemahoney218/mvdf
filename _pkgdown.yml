@@ -1,0 +1,29 @@
+url: https://mikemahoney218.github.io/blenderapi
+authors:
+  Mike Mahoney:
+    href: https://www.mm218.dev/
+template:
+  params:
+    bootswatch: flatly
+navbar:
+  structure:
+    right:
+    - home
+    - reference
+    - news
+    - github
+  components:
+    home:
+      icon: fas fa-home fa-lg
+      href: index.html
+    reference:
+      text: Reference
+      href: reference/index.html
+    news:
+      text: News
+      href: news/index.html
+    github:
+      icon: fab fa-github fa-lg
+      href: https://github.com/mikemahoney218/blenderapi
+
+
