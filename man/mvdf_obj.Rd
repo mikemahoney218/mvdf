@@ -4,7 +4,15 @@
 \alias{mvdf_obj}
 \title{Construct a Minimum Viable Data Frame object}
 \usage{
-mvdf_obj(data = NULL, x, y, z, idx = NULL, metadata = NULL, appendix = NULL)
+mvdf_obj(
+  data = NULL,
+  x = "x",
+  y = "y",
+  z = "z",
+  idx = NULL,
+  metadata = NULL,
+  appendix = NULL
+)
 }
 \arguments{
 \item{data}{Optionally, a data frame containing all the data necessary to

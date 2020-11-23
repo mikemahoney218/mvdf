@@ -43,5 +43,4 @@ Collate:
     'get_mvdf.R'
     'make_mvdf.R'
     'metadata.R'
-    'set_mvdf.R'
     'show.R'

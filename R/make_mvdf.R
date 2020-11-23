@@ -24,9 +24,9 @@
 #'
 #' @export
 mvdf_obj <- function(data = NULL,
-                     x,
-                     y,
-                     z,
+                     x = "x",
+                     y = "y",
+                     z = "z",
                      idx = NULL,
                      metadata = NULL,
                      appendix = NULL) {
