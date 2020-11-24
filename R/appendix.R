@@ -15,4 +15,3 @@ setGeneric("appendix",
 setMethod("appendix", "mvdf_obj", function(object) {
   object@appendix
 })
-

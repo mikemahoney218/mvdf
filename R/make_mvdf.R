@@ -27,7 +27,7 @@ mvdf_obj <- function(data = NULL,
                      x = "x",
                      y = "y",
                      z = "z",
-                     idx = NULL,
+                     idx = "idx",
                      metadata = NULL,
                      appendix = NULL) {
 
@@ -40,16 +40,14 @@ mvdf_obj <- function(data = NULL,
     y <- data[[y]]
     z <- data[[z]]
 
+    idx <- tryCatch(idx, error = function(e) rlang::ensym(idx))
+    idx <- data[[idx]]
     if (is.null(idx)) {
       idx <- seq(1, length(x), 1)
 
       if (!is.null(metadata)) {
-        metadata$idx <- idx
+        metadata$idx <- seq(1, nrow(metadata), 1)
       }
-
-    } else {
-      idx <- tryCatch(idx, error = function(e) rlang::ensym(idx))
-      idx <- data[idx]
     }
 
   }

@@ -1,4 +1,4 @@
-url: https://mikemahoney218.github.io/blenderapi
+url: https://mikemahoney218.github.io/mvdf
 authors:
   Mike Mahoney:
     href: https://www.mm218.dev/
@@ -24,6 +24,6 @@ navbar:
       href: news/index.html
     github:
       icon: fab fa-github fa-lg
-      href: https://github.com/mikemahoney218/blenderapi
+      href: https://github.com/mikemahoney218/mvdf
 
 

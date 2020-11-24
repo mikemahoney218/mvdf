@@ -9,7 +9,7 @@ mvdf_obj(
   x = "x",
   y = "y",
   z = "z",
-  idx = NULL,
+  idx = "idx",
   metadata = NULL,
   appendix = NULL
 )

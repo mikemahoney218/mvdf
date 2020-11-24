@@ -1,7 +1,7 @@
 #' Add standard ending boilerplate to a Blender rendering script
 #'
 #' @param script The Python script to append the boilerplate code onto.
-#' @param filepath The file path to save the render to. Should end with
+#' @param filepath The file path to save the render to. Must end with
 #' `.blend`.
 #'
 #' @return A length 1 character vector containing the Blender Python script with
@@ -11,6 +11,8 @@
 create_blender_endmatter <- function(script,
                                      filepath = tempfile(fileext = ".blend")
                                          ) {
+  stopifnot(is.character(script) && (length(script) == 1))
+  stopifnot(grepl("\\.blend$", filepath))
 
   paste0(
     script,

@@ -15,11 +15,11 @@ create_blender_frontmatter(
 \item{imports}{A character vector of Python packages to import at the start
 of the script. Packages are imported without aliases, so that script-building
 functions may always expect to use the full package name. Defaults to
-`bpy`, `mathutils`, and `math`.}
+`bpy`, `mathutils`, and `math`. Set to `NULL` to not import any packages.}
 
 \item{delete}{A character vector of objects in the default Blender scene to
 delete. Defaults to all objects in the default scene (`Cube`, `Camera`, and
-`Light`).}
+`Light`). Set to `NULL` to not delete any objects.}
 
 \item{before}{Optionally, a character vector containing lines of code to add
 before package imports.}

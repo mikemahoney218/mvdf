@@ -10,7 +10,7 @@ mvdf(x) <- value
 \S4method{mvdf}{mvdf_obj}(x) <- value
 }
 \arguments{
-\item{x}{The `forthetrees` object to set the mvdf within.}
+\item{x}{The object to set the mvdf within.}
 
 \item{value}{The data to replace the mvdf with.}
 }

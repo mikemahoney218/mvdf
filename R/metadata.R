@@ -13,4 +13,3 @@ setGeneric("metadata",
 setMethod("metadata", "mvdf_obj", function(object) {
   object@metadata
 })
-
