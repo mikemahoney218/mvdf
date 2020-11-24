@@ -43,7 +43,7 @@
 <meta property="og:description" content="This function returns a new object of the same class as `object` with the
 same metadata and appendix slots as `object`, but with other slots taking
 values from `mvdf`. Use it as a convenient, pipe-able way to set slot values
-for objects subclassing `mvdf`" />
+for objects subclassing `mvdf`." />
 
 
 
@@ -97,7 +97,7 @@ for objects subclassing `mvdf`" />
   <a href="../news/index.html">News</a>
 </li>
 <li>
-  <a href="https://github.com/mikemahoney218/blenderapi">
+  <a href="https://github.com/mikemahoney218/mvdf">
     <span class="fab fa fab fa-github fa-lg"></span>
      
   </a>
@@ -124,10 +124,10 @@ for objects subclassing `mvdf`" />
     <p>This function returns a new object of the same class as `object` with the
 same metadata and appendix slots as `object`, but with other slots taking
 values from `mvdf`. Use it as a convenient, pipe-able way to set slot values
-for objects subclassing `mvdf`</p>
+for objects subclassing `mvdf`.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>set_mvdf</span><span class='op'>(</span><span class='va'>mvdf</span>, <span class='va'>object</span>, metadata <span class='op'>=</span> <span class='cn'>NULL</span>, appendix <span class='op'>=</span> <span class='cn'>NULL</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>set_mvdf</span><span class='op'>(</span><span class='va'>mvdf</span>, <span class='va'>object</span>, metadata <span class='op'>=</span> <span class='cn'>NULL</span>, appendix <span class='op'>=</span> <span class='cn'>NULL</span>, <span class='va'>...</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -138,7 +138,7 @@ for objects subclassing `mvdf`</p>
     </tr>
     <tr>
       <th>object</th>
-      <td><p>The</p></td>
+      <td><p>The object to update.</p></td>
     </tr>
     <tr>
       <th>metadata</th>
@@ -149,6 +149,11 @@ for objects subclassing `mvdf`</p>
       <th>appendix</th>
       <td><p>The appendix to include in the new object. If `NULL`
 (the default), uses the appendix from `object`.</p></td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td><p>Any additional arguments used in the constructor function being
+called.</p></td>
     </tr>
     </table>
 

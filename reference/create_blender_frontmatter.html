@@ -94,7 +94,7 @@
   <a href="../news/index.html">News</a>
 </li>
 <li>
-  <a href="https://github.com/mikemahoney218/blenderapi">
+  <a href="https://github.com/mikemahoney218/mvdf">
     <span class="fab fa fab fa-github fa-lg"></span>
      
   </a>
@@ -136,13 +136,13 @@
       <td><p>A character vector of Python packages to import at the start
 of the script. Packages are imported without aliases, so that script-building
 functions may always expect to use the full package name. Defaults to
-`bpy`, `mathutils`, and `math`.</p></td>
+`bpy`, `mathutils`, and `math`. Set to `NULL` to not import any packages.</p></td>
     </tr>
     <tr>
       <th>delete</th>
       <td><p>A character vector of objects in the default Blender scene to
 delete. Defaults to all objects in the default scene (`Cube`, `Camera`, and
-`Light`).</p></td>
+`Light`). Set to `NULL` to not delete any objects.</p></td>
     </tr>
     <tr>
       <th>before</th>
