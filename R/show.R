@@ -10,10 +10,8 @@
 #'
 #' @exportMethod show
 methods::setMethod("show", "mvdf_obj", function(object) {
-
   print(as.data.frame(object))
   print(object@metadata)
   print(object@appendix)
   return(NULL)
-
 })

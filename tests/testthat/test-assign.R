@@ -12,15 +12,22 @@ test_that("assignment works", {
   mvdf(iris_test) <- fake_mvdf
 
 
-  expect_equal(mvdf(iris_test),
-               fake_mvdf)
-  expect_equal(mvdf(iris_test)$x,
-               mvdf(iris_test)$y)
+  expect_equal(
+    mvdf(iris_test),
+    fake_mvdf
+  )
+  expect_equal(
+    mvdf(iris_test)$x,
+    mvdf(iris_test)$y
+  )
 
-  expect_equal(appendix(iris_test),
-               fake_appendix)
+  expect_equal(
+    appendix(iris_test),
+    fake_appendix
+  )
 
-  expect_equal(metadata(iris_test),
-               fake_metadata)
-
+  expect_equal(
+    metadata(iris_test),
+    fake_metadata
+  )
 })

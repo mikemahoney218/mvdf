@@ -16,17 +16,18 @@
 #' for a Blender Python script.
 #'
 #' @export
-create_blender_frontmatter <- function(imports = c("bpy",
-                                                   "mathutils",
-                                                   "math"),
+create_blender_frontmatter <- function(imports = c(
+                                         "bpy",
+                                         "mathutils",
+                                         "math"
+                                       ),
                                        delete = c(
                                          "Cube",
                                          "Camera",
                                          "Light"
-                                         ),
+                                       ),
                                        before = NULL,
                                        after = NULL) {
-
   if (is.null(imports)) {
     out_imports <- ""
   } else {
@@ -42,9 +43,11 @@ create_blender_frontmatter <- function(imports = c("bpy",
   } else {
     out_delete <- vector("list", length = length(delete) + 1)
     for (i in seq_len(length(delete))) {
-      out_delete[[i]] <- paste0('bpy.data.objects.remove(bpy.data.objects["',
-                                delete[[i]],
-                                '"], do_unlink=True)')
+      out_delete[[i]] <- paste0(
+        'bpy.data.objects.remove(bpy.data.objects["',
+        delete[[i]],
+        '"], do_unlink=True)'
+      )
       out_delete[[i + 1]] <- ""
     }
   }
@@ -54,22 +57,26 @@ create_blender_frontmatter <- function(imports = c("bpy",
     "\n",
     paste0(out_delete, collapse = "\n"),
     "",
-    collapse = "\n")
-
-  if (length(before) > 0) out_script <- paste0(
-    paste0(before, collapse = "\n"),
-    "\n",
-    out_script,
     collapse = "\n"
   )
 
-  if (length(after) > 0) out_script <- paste0(
-    out_script,
-    "\n",
-    paste0(after, collapse = "\n"),
-    collapse = "\n"
-  )
+  if (length(before) > 0) {
+    out_script <- paste0(
+      paste0(before, collapse = "\n"),
+      "\n",
+      out_script,
+      collapse = "\n"
+    )
+  }
+
+  if (length(after) > 0) {
+    out_script <- paste0(
+      out_script,
+      "\n",
+      paste0(after, collapse = "\n"),
+      collapse = "\n"
+    )
+  }
 
   return(out_script)
-
 }

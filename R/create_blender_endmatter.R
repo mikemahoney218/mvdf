@@ -9,8 +9,7 @@
 #'
 #' @export
 create_blender_endmatter <- function(script,
-                                     filepath = tempfile(fileext = ".blend")
-                                         ) {
+                                     filepath = tempfile(fileext = ".blend")) {
   stopifnot(is.character(script) && (length(script) == 1))
   stopifnot(grepl("\\.blend$", filepath))
 
@@ -21,5 +20,4 @@ create_blender_endmatter <- function(script,
     filepath,
     "')\n"
   )
-
 }

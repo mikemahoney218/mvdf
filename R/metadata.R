@@ -5,8 +5,10 @@
 #' @rdname get_metadata
 #'
 #' @export
-setGeneric("metadata",
-           function(object) standardGeneric("metadata"))
+setGeneric(
+  "metadata",
+  function(object) standardGeneric("metadata")
+)
 
 #' @rdname get_metadata
 #' @exportMethod  metadata

@@ -7,8 +7,10 @@
 #' @rdname get_appendix
 #'
 #' @export
-setGeneric("appendix",
-           function(object) standardGeneric("appendix"))
+setGeneric(
+  "appendix",
+  function(object) standardGeneric("appendix")
+)
 
 #' @rdname get_appendix
 #' @exportMethod appendix

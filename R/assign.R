@@ -20,18 +20,18 @@ set_values <- function(object,
                        metadata = NULL,
                        appendix = NULL,
                        ...) {
-
   if (is.null(mvdf)) mvdf <- mvdf(object)
   if (is.null(metadata)) metadata <- metadata(object)
   if (is.null(appendix)) appendix <- appendix(object)
 
-  res <- do.call(class(object)[[1]], list(data = mvdf,
-                                          metadata = metadata,
-                                          appendix = appendix,
-                                          ...))
+  res <- do.call(class(object)[[1]], list(
+    data = mvdf,
+    metadata = metadata,
+    appendix = appendix,
+    ...
+  ))
   methods::validObject(res)
   return(res)
-
 }
 
 ################################################################################
@@ -58,13 +58,13 @@ set_values <- function(object,
 #'
 #' @export
 set_mvdf <- function(mvdf, object, metadata = NULL, appendix = NULL, ...) {
-
-  set_values(object = object,
-             mvdf = mvdf,
-             metadata = metadata,
-             appendix = appendix,
-             ...)
-
+  set_values(
+    object = object,
+    mvdf = mvdf,
+    metadata = metadata,
+    appendix = appendix,
+    ...
+  )
 }
 
 #' Set mvdf values for an `mvdf_obj` object.
@@ -109,11 +109,13 @@ setMethod("mvdf<-", "mvdf_obj", function(x, value) {
 #'
 #' @export
 set_metadata <- function(metadata, object, mvdf = NULL, appendix = NULL, ...) {
-  set_values(object = object,
-             mvdf = mvdf,
-             metadata = metadata,
-             appendix = appendix,
-             ...)
+  set_values(
+    object = object,
+    mvdf = mvdf,
+    metadata = metadata,
+    appendix = appendix,
+    ...
+  )
 }
 
 #' Set metadata values for an `mvdf_obj` object.
@@ -158,11 +160,13 @@ setMethod("metadata<-", "mvdf_obj", function(x, value) {
 #'
 #' @export
 set_appendix <- function(appendix, object, mvdf = NULL, metadata = NULL, ...) {
-  set_values(object = object,
-             mvdf = mvdf,
-             metadata = metadata,
-             appendix = appendix,
-             ...)
+  set_values(
+    object = object,
+    mvdf = mvdf,
+    metadata = metadata,
+    appendix = appendix,
+    ...
+  )
 }
 
 #' Set appendix values for an `mvdf_obj` object.

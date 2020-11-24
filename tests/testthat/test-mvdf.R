@@ -1,5 +1,4 @@
 test_that("mvdf are stable", {
-
   load("testdata/iris_test.rds")
   load("testdata/iris_mvdf.rds")
 

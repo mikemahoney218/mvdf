@@ -18,26 +18,25 @@
 #'
 #' @exportClass mvdf_obj
 methods::setClass("mvdf_obj",
-                  slots = c(
-                    x = "numeric",
-                    y = "numeric",
-                    z = "numeric",
-                    idx = "character",
-                    metadata = "data.frame",
-                    appendix = "list"
-                  )
+  slots = c(
+    x = "numeric",
+    y = "numeric",
+    z = "numeric",
+    idx = "character",
+    metadata = "data.frame",
+    appendix = "list"
+  )
 )
 
 setValidity("mvdf_obj", function(object) {
-
   error <- vector("character")
   n_issue <- 1
 
   any_missing <- function(obj) {
     any(is.null(obj) |
-          is.na(obj) |
-          is.infinite(obj) |
-          is.nan(obj))
+      is.na(obj) |
+      is.infinite(obj) |
+      is.nan(obj))
   }
 
   if (length(object@idx) != length(unique(object@idx))) {
@@ -61,8 +60,8 @@ setValidity("mvdf_obj", function(object) {
     n_issue <- n_issue + 1
   }
   if (length(object@idx) != length(object@x) ||
-      length(object@idx) != length(object@y) ||
-      length(object@idx) != length(object@z)) {
+    length(object@idx) != length(object@y) ||
+    length(object@idx) != length(object@z)) {
     error[n_issue] <- "All slots must be the same length."
     n_issue <- n_issue + 1
   }
@@ -70,7 +69,8 @@ setValidity("mvdf_obj", function(object) {
     error[n_issue] <- "@metadata must have an index column named 'idx'."
   }
 
-  if (n_issue > 1) return(paste0(error, collapse = "\n"))
+  if (n_issue > 1) {
+    return(paste0(error, collapse = "\n"))
+  }
   return(TRUE)
-
 })

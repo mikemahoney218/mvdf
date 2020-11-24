@@ -20,8 +20,14 @@
 #' @export
 execute_render <- function(script,
                            blender = NULL) {
-
   blender <- Sys.which("blender")[[1]]
+  if (blender == "") {
+    stop(
+      "Couldn't find Blender.\n",
+      "Please install Blender from https://www.blender.org/ \n",
+      "or, if already installed, pass the path to the executable to `blender`."
+    )
+  }
 
   if (file.exists(script)) {
     system2(blender, args = paste("-b -P", script))
@@ -31,13 +37,17 @@ execute_render <- function(script,
     system2(blender, args = paste("-b -P", scriptfile))
   }
 
-  outfile <- regmatches(script,
-                        regexpr("(?<=mainfile\\(filepath=\\').*(?=\\')",
-                                script,
-                                perl = TRUE)
-                        )
+  outfile <- regmatches(
+    script,
+    regexpr("(?<=mainfile\\(filepath=\\').*(?=\\')",
+      script,
+      perl = TRUE
+    )
+  )
 
-  if (length(outfile) == 0) return(invisible(NULL))
+  if (length(outfile) == 0) {
+    return(invisible(NULL))
+  }
 
   return(invisible(outfile))
 }

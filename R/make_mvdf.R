@@ -30,7 +30,6 @@ mvdf_obj <- function(data = NULL,
                      idx = "idx",
                      metadata = NULL,
                      appendix = NULL) {
-
   if (!is.null(data)) {
     x <- tryCatch(x, error = function(e) rlang::ensym(x))
     y <- tryCatch(y, error = function(e) rlang::ensym(y))
@@ -49,15 +48,14 @@ mvdf_obj <- function(data = NULL,
         metadata$idx <- seq(1, nrow(metadata), 1)
       }
     }
-
   }
 
   methods::new("mvdf_obj",
-               x = as.double(x),
-               y = as.double(y),
-               z = as.double(z),
-               idx = as.character(idx),
-               metadata = as.data.frame(metadata),
-               appendix = as.list(appendix)
+    x = as.double(x),
+    y = as.double(y),
+    z = as.double(z),
+    idx = as.character(idx),
+    metadata = as.data.frame(metadata),
+    appendix = as.list(appendix)
   )
 }
