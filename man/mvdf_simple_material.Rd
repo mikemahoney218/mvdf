@@ -9,6 +9,7 @@ mvdf_simple_material(
   diffuse_color = "diffuse_color",
   metallic = "metallic",
   roughness = "roughness",
+  translate_colors = FALSE,
   ...
 )
 }
@@ -19,13 +20,17 @@ interpreted as data to use in constructing the object; if not `NULL`,
 arguments are interpreted as the names of columns in `data` containing the
 values for each slot.}
 
-\item{diffuse_color}{Diffuse color of the material, in any of the formats
-understood by [grDevices::col2rgb].}
+\item{diffuse_color}{Diffuse color of the material, in either a RGBA array
+(if `translate_colors` is `TRUE`) or in any of the formats
+understood by [grDevices::col2rgb] (if `translate_colors` is `FALSE`).}
 
 \item{metallic}{Amount of mirror reflection for raytrace, as a float from
 0-1.}
 
 \item{roughness}{Roughness of the material, as a float from 0-1.}
+
+\item{translate_colors}{Logical: use `grDevices` to create RGBA arrays from
+`diffuse_color`?}
 
 \item{...}{Additional arguments passed to [mvdf_obj]}
 }
