@@ -45,7 +45,7 @@ execute_render <- function(script,
   collapse = "\n"
   )
 
-  if (any(grepl("\bTraceback\b", systemputs))) {
+  if (any(grepl("Traceback", systemputs))) {
     stop(systemputs)
   }
 

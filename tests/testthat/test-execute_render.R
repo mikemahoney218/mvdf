@@ -1,7 +1,6 @@
 test_that("execute_render stops on failure", {
   skip_on_cran()
-  skip_on_os("mac")
-  skip_on_os("windows")
+  skip_on_ci()
   trunk <- mvdf_obj(x = 0, y = 0, z = 5)
   expect_error(
     execute_render(

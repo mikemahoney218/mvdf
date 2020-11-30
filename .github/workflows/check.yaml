@@ -54,12 +54,6 @@ jobs:
           key: ${{ runner.os }}-${{ hashFiles('.github/R-version') }}-1-${{ hashFiles('.github/depends.Rds') }}
           restore-keys: ${{ runner.os }}-${{ hashFiles('.github/R-version') }}-1-
 
-      - name: Install Blender
-        if: runner.os == 'Linux'
-        run: |
-          sudo echo 'pcm.!default {\n    type plug\n    slave.pcm "null"\n}' > /etc/asound.conf
-          sudo apt install blender
-
       - name: Install system dependencies
         if: runner.os == 'Linux'
         run: |
