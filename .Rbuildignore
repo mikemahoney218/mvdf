@@ -8,3 +8,4 @@
 .github
 ^forthetrees\.Rproj$
 man-roxygen
+^codemeta\.json$

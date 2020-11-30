@@ -53,11 +53,11 @@ jobs:
           path: ${{ env.R_LIBS_USER }}
           key: ${{ runner.os }}-${{ hashFiles('.github/R-version') }}-1-${{ hashFiles('.github/depends.Rds') }}
           restore-keys: ${{ runner.os }}-${{ hashFiles('.github/R-version') }}-1-
-          
+
       - name: Install Blender
         if: runner.os == 'Linux'
         run: |
-          sudo apt install blender
+          sudo apt install alsa-utils blender
 
       - name: Install system dependencies
         if: runner.os == 'Linux'
