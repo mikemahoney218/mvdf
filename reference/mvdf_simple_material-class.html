@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Add standard ending boilerplate to a Blender rendering script — create_blender_endmatter • mvdf</title>
+<title>Class to attach basic material data to `mvdf_obj` objects — mvdf_simple_material-class • mvdf</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,8 @@
 
 
 
-<meta property="og:title" content="Add standard ending boilerplate to a Blender rendering script — create_blender_endmatter" />
-<meta property="og:description" content="Add standard ending boilerplate to a Blender rendering script" />
+<meta property="og:title" content="Class to attach basic material data to `mvdf_obj` objects — mvdf_simple_material-class" />
+<meta property="og:description" content="Class to attach basic material data to `mvdf_obj` objects" />
 
 
 
@@ -112,35 +112,52 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Add standard ending boilerplate to a Blender rendering script</h1>
+    <h1>Class to attach basic material data to `mvdf_obj` objects</h1>
     
-    <div class="hidden name"><code>create_blender_endmatter.Rd</code></div>
+    <div class="hidden name"><code>mvdf_simple_material-class.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Add standard ending boilerplate to a Blender rendering script</p>
+    <p>Class to attach basic material data to `mvdf_obj` objects</p>
     </div>
 
-    <pre class="usage"><span class='fu'>create_blender_endmatter</span><span class='op'>(</span><span class='va'>script</span>, filepath <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/tempfile.html'>tempfile</a></span><span class='op'>(</span>fileext <span class='op'>=</span> <span class='st'>".blend"</span><span class='op'>)</span><span class='op'>)</span></pre>
 
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
-    <table class="ref-arguments">
-    <colgroup><col class="name" /><col class="desc" /></colgroup>
-    <tr>
-      <th>script</th>
-      <td><p>The Python script to append the generated code onto.</p></td>
-    </tr>
-    <tr>
-      <th>filepath</th>
-      <td><p>The file path to save the render to. Must end with
-`.blend`.</p></td>
-    </tr>
-    </table>
 
-    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+    <h2 class="hasAnchor" id="slots"><a class="anchor" href="#slots"></a>Slots</h2>
 
-    <p>A length 1 character vector containing the Blender Python script with
-ending boilerplate added.</p>
+    
+
+<dl>
+<dt><code>x,y,z</code></dt><dd><p>Numeric: distance of the origin of the object from the origin of
+the grid system (the central point at 0, 0, 0) in meters in the given
+direction. Must have no `NA`, `NULL`, `NaN`, `Inf`, or `-Inf` values.</p></dd>
+
+<dt><code>idx</code></dt><dd><p>Character: a unique identifier (or "index") for each object to be
+modeled. Must be unique with no `NA` or `NULL` values, but otherwise is
+not validated.</p></dd>
+
+<dt><code>metadata</code></dt><dd><p>Data frame: a table containing additional information on the
+objects to be modeled. Optional, but if this slot is used then the data frame
+must contain a column named `idx` which should correspond to the `idx` slot.
+Only the existence of this column is validated.</p></dd>
+
+<dt><code>appendix</code></dt><dd><p>List: additional data produced in the generation of the
+object. Not validated; any additional outputs that don't map to modeled
+objects may be inserted here.</p></dd>
+
+<dt><code>diffuse_color</code></dt><dd><p>Diffuse color of the material, as an RGBA array of floats
+scaled from 0-1.</p></dd>
+
+<dt><code>metallic</code></dt><dd><p>Amount of mirror reflection for raytrace, as a float from
+0-1.</p></dd>
+
+<dt><code>roughness</code></dt><dd><p>Roughness of the material, as a float from 0-1.</p></dd>
+
+</dl>
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+
+    <div class='dont-index'><p>Other classes and related functions: 
+<code><a href='mvdf_obj-class.html'>mvdf_obj-class</a></code></p></div>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
