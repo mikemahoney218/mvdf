@@ -57,7 +57,7 @@ jobs:
       - name: Install Blender
         if: runner.os == 'Linux'
         run: |
-          sudo apt install alsa-utils blender
+          sudo apt install pulseaudio blender
 
       - name: Install system dependencies
         if: runner.os == 'Linux'
