@@ -4,8 +4,8 @@ test_that("default argument create_blender_endmatter is stable", {
       create_blender_frontmatter(),
       "fake.blend"
     ),
-    "import bpy\nimport mathutils\nimport math\n\nbpy.data.objects.remove(bpy.data.objects[\"Cube\"], do_unlink=True)\nbpy.data.objects.remove(bpy.data.objects[\"Camera\"], do_unlink=True)\nbpy.data.objects.remove(bpy.data.objects[\"Light\"], do_unlink=True)\n\n\nbpy.ops.wm.save_as_mainfile(filepath='fake.blend')\n"
-  ) # nolint
+    "import bpy\nimport mathutils\nimport math\n\nbpy.data.objects.remove(bpy.data.objects[\"Cube\"], do_unlink=True)\nbpy.data.objects.remove(bpy.data.objects[\"Camera\"], do_unlink=True)\nbpy.data.objects.remove(bpy.data.objects[\"Light\"], do_unlink=True)\n\n\nbpy.ops.wm.save_as_mainfile(filepath='fake.blend')\n" # nolint
+  )
 })
 
 test_that("create_blender_endmatter fails as expected", {

@@ -31,9 +31,11 @@ SystemRequirements:
     Blender
 Imports: 
     methods,
-    rlang
+    rlang,
+    glue
 Collate: 
     'mvdf.R'
+    'add_mesh_primitive.R'
     'appendix.R'
     'as.data.frame.R'
     'assign.R'
@@ -43,4 +45,6 @@ Collate:
     'get_mvdf.R'
     'make_mvdf.R'
     'metadata.R'
+    'mvdf_simple_material.R'
     'show.R'
+    'zzz.R'

@@ -1,7 +1,7 @@
 #' Construct a Minimum Viable Data Frame object
 #'
 #' @param data Optionally, a data frame containing all the data necessary to
-#' create a `mvdf`. If left `NULL`, then `x`, `y`, `z`, and `idx` are
+#' create a `mvdf_obj`. If left `NULL`, then `x`, `y`, `z`, and `idx` are
 #' interpreted as the values to use for each slot; if not `NULL`, `x`, `y`, `z`,
 #' and `idx` are interpreted as the names of columns in `data` containing the
 #' values for each slot.

@@ -7,7 +7,7 @@
 create_blender_endmatter(script, filepath = tempfile(fileext = ".blend"))
 }
 \arguments{
-\item{script}{The Python script to append the boilerplate code onto.}
+\item{script}{The Python script to append the generated code onto.}
 
 \item{filepath}{The file path to save the render to. Must end with
 `.blend`.}

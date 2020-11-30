@@ -1,6 +1,6 @@
 #' Add standard ending boilerplate to a Blender rendering script
 #'
-#' @param script The Python script to append the boilerplate code onto.
+#' @template script
 #' @param filepath The file path to save the render to. Must end with
 #' `.blend`.
 #'
