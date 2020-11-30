@@ -20,7 +20,8 @@
 #' @export
 execute_render <- function(script,
                            blender = NULL) {
-  blender <- Sys.which("blender")[[1]]
+  if (is.null(blender)) blender <- Sys.which("blender")[[1]]
+
   if (blender == "") {
     stop(
       "Couldn't find Blender.\n",
@@ -30,12 +31,25 @@ execute_render <- function(script,
   }
 
   if (file.exists(script)) {
-    system2(blender, args = paste("-b -P", script))
+    scriptfile <- script
   } else {
     scriptfile <- tempfile(fileext = ".py")
     writeLines(script, scriptfile)
-    system2(blender, args = paste("-b -P", scriptfile))
   }
+
+  systemputs <- paste0(system2(blender,
+    args = paste("-b -P", scriptfile),
+    stdout = TRUE,
+    stderr = TRUE
+  ),
+  collapse = "\n"
+  )
+
+  if (any(grepl("\bTraceback\b", systemputs))) {
+    stop(systemputs)
+  }
+
+  message(paste(systemputs, "(Success!)"))
 
   outfile <- regmatches(
     script,

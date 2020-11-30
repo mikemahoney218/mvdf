@@ -30,11 +30,13 @@ add_mesh_primitive <- function(script,
                                location = NULL,
                                ...) {
   stopifnot(is.character(script) && (length(script) == 1))
-  add_mesh_primitive_method(object,
-                            script,
-                            primitive,
-                            location,
-                            ...)
+  add_mesh_primitive_method(
+    object,
+    script,
+    primitive,
+    location,
+    ...
+  )
 }
 
 #' @rdname add_mesh_primitive
@@ -58,7 +60,6 @@ setMethod(
            primitive = "ico_sphere",
            location = NULL,
            ...) {
-
     dots <- list(...)
 
     if (length(dots) == 0) {
@@ -72,9 +73,11 @@ setMethod(
           function(nm, ob) paste0(nm, "=", ob),
           names(dots),
           dots,
-          SIMPLIFY = FALSE),
+          SIMPLIFY = FALSE
+        ),
         ", ",
-        collapse = ",")
+        collapse = ","
+      )
     }
 
     if (is.null(location)) {

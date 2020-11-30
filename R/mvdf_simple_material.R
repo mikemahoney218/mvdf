@@ -11,12 +11,12 @@
 #'
 #' @exportClass mvdf_simple_material
 methods::setClass("mvdf_simple_material",
-                  contains = "mvdf_obj",
-                  slots = c(
-                    diffuse_color = "character",
-                    metallic = "numeric",
-                    roughness = "numeric"
-                  )
+  contains = "mvdf_obj",
+  slots = c(
+    diffuse_color = "character",
+    metallic = "numeric",
+    roughness = "numeric"
+  )
 )
 
 setValidity("mvdf_simple_material", function(object) {
@@ -24,8 +24,8 @@ setValidity("mvdf_simple_material", function(object) {
   n_issue <- 1
 
   if (length(object@idx) != length(object@diffuse_color) ||
-      length(object@idx) != length(object@metallic) ||
-      length(object@idx) != length(object@roughness)) {
+    length(object@idx) != length(object@metallic) ||
+    length(object@idx) != length(object@roughness)) {
     error[n_issue] <- "All slots must be the same length."
     n_issue <- n_issue + 1
   }
@@ -60,21 +60,23 @@ mvdf_simple_material <- function(data = NULL,
                                  roughness = "roughness",
                                  translate_colors = FALSE,
                                  ...) {
-
   res <- mvdf_obj(data = data, ...)
   res_mvdf <- mvdf(res)
 
   if (!is.null(data)) {
     diffuse_color <- tryCatch(diffuse_color,
-                              error = function(e) rlang::ensym(diffuse_color))
+      error = function(e) rlang::ensym(diffuse_color)
+    )
     diffuse_color <- data[[diffuse_color]]
 
     metallic <- tryCatch(metallic,
-                              error = function(e) rlang::ensym(metallic))
+      error = function(e) rlang::ensym(metallic)
+    )
     metallic <- data[[metallic]]
 
     roughness <- tryCatch(roughness,
-                              error = function(e) rlang::ensym(roughness))
+      error = function(e) rlang::ensym(roughness)
+    )
     roughness <- data[[roughness]]
   } else {
     if (diffuse_color == "diffuse_color") diffuse_color <- NA
@@ -108,25 +110,26 @@ mvdf_simple_material <- function(data = NULL,
 
   if (translate_colors) {
     diffuse_color <- vapply(diffuse_color,
-                            function(x) {
-                              paste0(
-                                as.vector(grDevices::col2rgb(x, TRUE) / 255),
-                                collapse = ",")
-                            },
-                            character(1),
-                            USE.NAMES = FALSE)
+      function(x) {
+        paste0(
+          as.vector(grDevices::col2rgb(x, TRUE) / 255),
+          collapse = ","
+        )
+      },
+      character(1),
+      USE.NAMES = FALSE
+    )
   }
 
   methods::new("mvdf_simple_material",
-               x = as.double(res_mvdf$x),
-               y = as.double(res_mvdf$y),
-               z = as.double(res_mvdf$z),
-               idx = as.character(res_mvdf$idx),
-               metadata = as.data.frame(metadata(res)),
-               appendix = as.list(appendix(res)),
-               diffuse_color = as.character(diffuse_color),
-               metallic = as.numeric(metallic),
-               roughness = as.numeric(roughness)
+    x = as.double(res_mvdf$x),
+    y = as.double(res_mvdf$y),
+    z = as.double(res_mvdf$z),
+    idx = as.character(res_mvdf$idx),
+    metadata = as.data.frame(metadata(res)),
+    appendix = as.list(appendix(res)),
+    diffuse_color = as.character(diffuse_color),
+    metallic = as.numeric(metallic),
+    roughness = as.numeric(roughness)
   )
-
 }
