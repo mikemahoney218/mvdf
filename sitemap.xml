@@ -4,7 +4,13 @@
     <loc>https://mikemahoney218.github.io/mvdf/index.html</loc>
   </url>
   <url>
+    <loc>https://mikemahoney218.github.io/mvdf/reference/add_blender_endmatter.html</loc>
+  </url>
+  <url>
     <loc>https://mikemahoney218.github.io/mvdf/reference/add_mesh_primitive.html</loc>
+  </url>
+  <url>
+    <loc>https://mikemahoney218.github.io/mvdf/reference/add_render_image.html</loc>
   </url>
   <url>
     <loc>https://mikemahoney218.github.io/mvdf/reference/all_missing.html</loc>
@@ -19,10 +25,10 @@
     <loc>https://mikemahoney218.github.io/mvdf/reference/as.data.frame-mvdf_obj-method.html</loc>
   </url>
   <url>
-    <loc>https://mikemahoney218.github.io/mvdf/reference/create_blender_endmatter.html</loc>
+    <loc>https://mikemahoney218.github.io/mvdf/reference/create_blender_frontmatter.html</loc>
   </url>
   <url>
-    <loc>https://mikemahoney218.github.io/mvdf/reference/create_blender_frontmatter.html</loc>
+    <loc>https://mikemahoney218.github.io/mvdf/reference/create_options.html</loc>
   </url>
   <url>
     <loc>https://mikemahoney218.github.io/mvdf/reference/execute_render.html</loc>
