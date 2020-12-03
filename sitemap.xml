@@ -7,6 +7,12 @@
     <loc>https://mikemahoney218.github.io/mvdf/reference/add_blender_endmatter.html</loc>
   </url>
   <url>
+    <loc>https://mikemahoney218.github.io/mvdf/reference/add_camera.html</loc>
+  </url>
+  <url>
+    <loc>https://mikemahoney218.github.io/mvdf/reference/add_light.html</loc>
+  </url>
+  <url>
     <loc>https://mikemahoney218.github.io/mvdf/reference/add_mesh_primitive.html</loc>
   </url>
   <url>
@@ -29,6 +35,9 @@
   </url>
   <url>
     <loc>https://mikemahoney218.github.io/mvdf/reference/create_options.html</loc>
+  </url>
+  <url>
+    <loc>https://mikemahoney218.github.io/mvdf/reference/deg_to_rad.html</loc>
   </url>
   <url>
     <loc>https://mikemahoney218.github.io/mvdf/reference/execute_render.html</loc>

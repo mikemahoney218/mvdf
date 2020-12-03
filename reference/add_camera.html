@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Add code to add mesh primitives to a Blender script — add_mesh_primitive • mvdf</title>
+<title>Add a camera object to a Blender scene — add_camera • mvdf</title>
 
 
 <!-- jquery -->
@@ -39,9 +39,8 @@
 
 
 
-<meta property="og:title" content="Add code to add mesh primitives to a Blender script — add_mesh_primitive" />
-<meta property="og:description" content="This function generates code that will, when run inside Blender, create mesh
-primitives within a scene." />
+<meta property="og:title" content="Add a camera object to a Blender scene — add_camera" />
+<meta property="og:description" content="Add a camera object to a Blender scene" />
 
 
 
@@ -113,39 +112,21 @@ primitives within a scene." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Add code to add mesh primitives to a Blender script</h1>
+    <h1>Add a camera object to a Blender scene</h1>
     
-    <div class="hidden name"><code>add_mesh_primitive.Rd</code></div>
+    <div class="hidden name"><code>add_camera.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>This function generates code that will, when run inside Blender, create mesh
-primitives within a scene.</p>
+    <p>Add a camera object to a Blender scene</p>
     </div>
 
-    <pre class="usage"><span class='fu'>add_mesh_primitive</span><span class='op'>(</span>
+    <pre class="usage"><span class='fu'>add_camera</span><span class='op'>(</span>
   <span class='va'>script</span>,
-  <span class='va'>object</span>,
-  primitive <span class='op'>=</span> <span class='st'>"ico_sphere"</span>,
-  location <span class='op'>=</span> <span class='cn'>NULL</span>,
-  <span class='va'>...</span>
-<span class='op'>)</span>
-
-<span class='fu'>add_mesh_primitive_method</span><span class='op'>(</span>
-  <span class='va'>object</span>,
-  <span class='va'>script</span>,
-  primitive <span class='op'>=</span> <span class='st'>"ico_sphere"</span>,
-  location <span class='op'>=</span> <span class='cn'>NULL</span>,
-  <span class='va'>...</span>
-<span class='op'>)</span>
-
-<span class='co'># S4 method for mvdf_obj</span>
-<span class='fu'>add_mesh_primitive_method</span><span class='op'>(</span>
-  <span class='va'>object</span>,
-  <span class='va'>script</span>,
-  primitive <span class='op'>=</span> <span class='st'>"ico_sphere"</span>,
-  location <span class='op'>=</span> <span class='cn'>NULL</span>,
-  <span class='va'>...</span>
+  align <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"WORLD"</span>, <span class='st'>"VIEW"</span>, <span class='st'>"CURSOR"</span><span class='op'>)</span>,
+  location <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>0</span><span class='op'>)</span>,
+  rotation <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>0</span><span class='op'>)</span>,
+  convert_rotations <span class='op'>=</span> <span class='cn'>TRUE</span>
 <span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
@@ -156,37 +137,32 @@ primitives within a scene.</p>
       <td><p>The Python script to append the generated code onto.</p></td>
     </tr>
     <tr>
-      <th>object</th>
-      <td><p>An object inheriting from [mvdf_obj] which will be used to
-calculate the x, y, and z positions for each primitive. One primitive will be
-created for each row of `mvdf(object)`.</p></td>
-    </tr>
-    <tr>
-      <th>primitive</th>
-      <td><p>The primitive mesh type to create. See the official Blender
-documentation at <a href='https://docs.blender.org/api/blender_python_api_current/bpy.ops.mesh.html'>https://docs.blender.org/api/blender_python_api_current/bpy.ops.mesh.html</a>
-for a full list of available primitives.</p></td>
+      <th>align</th>
+      <td><p>Character: alignment of the new camera object. Options include
+"WORLD" (align the new object to the world), "VIEW" (align the new object to
+the view), and "CURSOR" (use the 3D cursor orientation for the new object).</p></td>
     </tr>
     <tr>
       <th>location</th>
-      <td><p>Either `NULL` (the default) or a vector of strings (in the
-format `location=(x, y, z)`) specifying the location for the origin of each
-primitive. If `NULL`, this vector will be automatically calculated using the
-`x`, `y`, and `z` values in `object`.</p></td>
+      <td><p>A numeric vector with length 3 specifying the x, y, and z
+grid coordinates for the new camera.</p></td>
     </tr>
     <tr>
-      <th>...</th>
-      <td><p>Additional arguments to pass to the primitive creation call. The
-available arguments are different for each primitive, and are documented in
-the official Blender documentation at
-<a href='https://docs.blender.org/api/blender_python_api_current/bpy.ops.mesh.html'>https://docs.blender.org/api/blender_python_api_current/bpy.ops.mesh.html</a>.</p></td>
+      <th>rotation</th>
+      <td><p>A numeric vector with length 3 specifying the x, y, and z
+rotation for the new camera.</p></td>
+    </tr>
+    <tr>
+      <th>convert_rotations</th>
+      <td><p>Logical: convert `rotation` to radians? Set to
+`FALSE` if `rotation` is already in radians.</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>A length 1 character vector containing the Blender Python script with
-code for creating mesh primitives added.</p>
+code to add a camera object added.</p>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
