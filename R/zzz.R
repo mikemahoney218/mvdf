@@ -42,3 +42,17 @@ create_options <- function(dts) {
     collapse = ","
   )
 }
+
+#' Convert decimal degrees to radians
+#'
+#' @param deg A vector of values, in decimal degrees, to convert to radians
+#'
+#' @family utilities
+#'
+#' @return A vector of the same length in radians
+#'
+#' @keywords internal
+deg_to_rad <- function(deg) {
+  stopifnot(is.numeric(deg))
+  deg * base::pi / 180
+}

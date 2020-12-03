@@ -51,6 +51,10 @@ available arguments are different for each primitive, and are documented in
 the official Blender documentation at
 \url{https://docs.blender.org/api/blender_python_api_current/bpy.ops.mesh.html}.}
 }
+\value{
+A length 1 character vector containing the Blender Python script with
+code for creating mesh primitives added.
+}
 \description{
 This function generates code that will, when run inside Blender, create mesh
 primitives within a scene.

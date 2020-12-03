@@ -20,7 +20,6 @@
 add_render_image <- function(script,
                              filepath,
                              ...) {
-
   dots <- list(...)
   if (length(dots) == 0) {
     dots <- ""
@@ -30,11 +29,13 @@ add_render_image <- function(script,
 
   stopifnot(is.character(script) && (length(script) == 1))
 
-  form <- regmatches(filepath,
-                     regexpr("(?<=\\.)[a-z]*$", # matches extensions
-                             filepath,
-                             perl = TRUE)
-                     )
+  form <- regmatches(
+    filepath,
+    regexpr("(?<=\\.)[a-z]*$", # matches extensions
+      filepath,
+      perl = TRUE
+    )
+  )
   form <- toupper(form)
 
   official_names <- c(
@@ -57,5 +58,4 @@ add_render_image <- function(script,
     dots,
     ")\n"
   )
-
 }

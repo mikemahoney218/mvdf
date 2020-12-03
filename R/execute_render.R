@@ -20,7 +20,6 @@
 #' @export
 execute_render <- function(script,
                            blender = NULL) {
-
   if (is.null(blender)) blender <- Sys.which("blender")[[1]]
 
   if (blender == "") {

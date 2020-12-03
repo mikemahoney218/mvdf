@@ -23,6 +23,9 @@
 #'
 #' @include mvdf.R
 #'
+#' @return A length 1 character vector containing the Blender Python script with
+#' code for creating mesh primitives added.
+#'
 #' @export
 add_mesh_primitive <- function(script,
                                object,

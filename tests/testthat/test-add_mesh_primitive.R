@@ -9,11 +9,12 @@ test_that("add_mesh_primitive works", {
       ),
       filepath = "tmp.blend"
     ),
-    gsub("\\r", "",
-         readChar(
-           "testdata/mesh_prim.txt",
-           file.info("testdata/mesh_prim.txt")$size
-           )
-         )
+    gsub(
+      "\\r", "",
+      readChar(
+        "testdata/mesh_prim.txt",
+        file.info("testdata/mesh_prim.txt")$size
+      )
     )
+  )
 })
