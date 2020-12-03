@@ -1,6 +1,6 @@
-test_that("default argument create_blender_endmatter is stable", {
+test_that("default argument add_blender_endmatter is stable", {
   expect_equal(
-    create_blender_endmatter(
+    add_blender_endmatter(
       create_blender_frontmatter(),
       "fake.blend"
     ),
@@ -8,11 +8,11 @@ test_that("default argument create_blender_endmatter is stable", {
   )
 })
 
-test_that("create_blender_endmatter fails as expected", {
+test_that("add_blender_endmatter fails as expected", {
   expect_error(create_blender_endmatter(
-    create_blender_frontmatter(),
+    add_blender_frontmatter(),
     "fake.py"
   ))
-  expect_error(create_blender_endmatter(240))
-  expect_error(create_blender_endmatter(c("script 1", "script 2")))
+  expect_error(add_blender_endmatter(240))
+  expect_error(add_blender_endmatter(c("script 1", "script 2")))
 })

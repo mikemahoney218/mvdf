@@ -68,16 +68,7 @@ setMethod(
       # friendly conversion from R logicals to Python
       dots[which(is.logical(dots) && dots == FALSE)] <- "False"
       dots[which(is.logical(dots) && dots == TRUE)] <- "True"
-      dots <- paste0(
-        mapply(
-          function(nm, ob) paste0(nm, "=", ob),
-          names(dots),
-          dots,
-          SIMPLIFY = FALSE
-        ),
-        ", ",
-        collapse = ","
-      )
+      dots <- create_options(dots)
     }
 
     if (is.null(location)) {

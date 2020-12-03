@@ -20,6 +20,7 @@
 #' @export
 execute_render <- function(script,
                            blender = NULL) {
+
   if (is.null(blender)) blender <- Sys.which("blender")[[1]]
 
   if (blender == "") {
@@ -37,6 +38,7 @@ execute_render <- function(script,
     writeLines(script, scriptfile)
   }
 
+  # we want to raise errors in Blender as errors in R, so capture & grep
   systemputs <- paste0(system2(blender,
     args = paste("-b -P", scriptfile),
     stdout = TRUE,

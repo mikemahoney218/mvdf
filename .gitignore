@@ -2,3 +2,7 @@
 dev.Rmd
 .Rhistory
 *.blend*
+inst/doc
+doc
+Meta
+*.png

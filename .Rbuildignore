@@ -9,3 +9,5 @@
 ^forthetrees\.Rproj$
 man-roxygen
 ^codemeta\.json$
+^doc$
+^Meta$

@@ -35,12 +35,13 @@ Imports:
     rlang,
     glue
 Collate: 
+    'add_blender_endmatter.R'
     'mvdf.R'
     'add_mesh_primitive.R'
+    'add_render_image.R'
     'appendix.R'
     'as.data.frame.R'
     'assign.R'
-    'create_blender_endmatter.R'
     'create_blender_frontmatter.R'
     'execute_render.R'
     'get_mvdf.R'
