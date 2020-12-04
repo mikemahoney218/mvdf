@@ -1,6 +1,6 @@
 #' Return the first or last parts of objects inheriting from `mvdf_obj`
 #'
-#' @name headtail
+#' @rdname headtail
 #'
 #' @param x An object inheriting from `mvdf_obj`
 #' @param n an integer vector of length up to nrow(mvdf(x)). Values specify the
