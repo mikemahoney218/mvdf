@@ -27,7 +27,8 @@ Suggests:
     rmarkdown,
     lintr,
     styler,
-    testthat
+    testthat,
+    dplyr
 SystemRequirements: 
     Blender
 Imports: 
@@ -42,8 +43,8 @@ Collate:
     'add_mesh_primitive.R'
     'add_render_image.R'
     'appendix.R'
-    'as.data.frame.R'
     'assign.R'
+    'base_methods.R'
     'create_blender_frontmatter.R'
     'execute_render.R'
     'get_mvdf.R'

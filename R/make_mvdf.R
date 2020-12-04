@@ -50,12 +50,16 @@ mvdf_obj <- function(data = NULL,
     }
   }
 
-  methods::new("mvdf_obj",
+  arg_list <- list(
+    Class = "mvdf_obj",
     x = as.double(x),
     y = as.double(y),
     z = as.double(z),
     idx = as.character(idx),
-    metadata = as.data.frame(metadata),
-    appendix = as.list(appendix)
+    metadata = as.data.frame(metadata)
   )
+
+  if (!is.null(appendix)) arg_list[["appendix"]] <-as.list(appendix)
+
+  do.call(methods::new, arg_list)
 }

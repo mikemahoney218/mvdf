@@ -11,7 +11,7 @@
 #' @exportMethod show
 methods::setMethod("show", "mvdf_obj", function(object) {
   print(as.data.frame(object))
-  print(object@metadata)
-  print(object@appendix)
+  if (nrow(object@metadata) > 0) print(object@metadata)
+  if (length(object@appendix) > 0) print(object@appendix)
   return(NULL)
 })
