@@ -15,23 +15,21 @@
 #'
 #' @exportMethod head
 methods::setMethod("head", "mvdf_obj", function(x, n = 6L, ...) {
-
   set_values(x,
-             mvdf = head(mvdf(x), n),
-             metadata = head(metadata(x), n),
-             appendix = appendix(x))
-
+    mvdf = head(mvdf(x), n),
+    metadata = head(metadata(x), n),
+    appendix = appendix(x)
+  )
 })
 
 #' @rdname headtail
 #' @exportMethod tail
 methods::setMethod("tail", "mvdf_obj", function(x, n = 6L, ...) {
-
   set_values(x,
-             mvdf = tail(mvdf(x), n),
-             metadata = tail(metadata(x), n),
-             appendix = appendix(x))
-
+    mvdf = tail(mvdf(x), n),
+    metadata = tail(metadata(x), n),
+    appendix = appendix(x)
+  )
 })
 
 #' Coerce to a data frame
@@ -51,8 +49,8 @@ methods::setMethod("as.data.frame", "mvdf_obj", function(x,
   nms <- setdiff(methods::slotNames(x), c("metadata", "appendix"))
   lst <- lapply(nms, function(nm) methods::slot(x, nm))
   return(as.data.frame(stats::setNames(lst, nms),
-                       row.names = row.names,
-                       optional = optional,
-                       ...
+    row.names = row.names,
+    optional = optional,
+    ...
   ))
 })

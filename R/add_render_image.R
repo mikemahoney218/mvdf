@@ -24,7 +24,7 @@ add_render_image <- function(script,
   if (length(dots) == 0) {
     dots <- ""
   } else {
-    dots <- paste(",", create_options(dots))
+    dots <- paste(create_options(dots))
   }
 
   stopifnot(is.character(script) && (length(script) == 1))
@@ -54,8 +54,9 @@ add_render_image <- function(script,
     "'\n",
     "bpy.context.scene.render.filepath = '",
     filepath,
-    "'\nbpy.ops.render.render(write_still = 1",
+    "'\nbpy.ops.render.render(",
     dots,
+    "write_still = 1",
     ")\n"
   )
 }

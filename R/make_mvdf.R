@@ -59,7 +59,7 @@ mvdf_obj <- function(data = NULL,
     metadata = as.data.frame(metadata)
   )
 
-  if (!is.null(appendix)) arg_list[["appendix"]] <-as.list(appendix)
+  if (!is.null(appendix)) arg_list[["appendix"]] <- as.list(appendix)
 
   do.call(methods::new, arg_list)
 }
