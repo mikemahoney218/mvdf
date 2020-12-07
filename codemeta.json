@@ -132,6 +132,18 @@
         "url": "https://cran.r-project.org"
       },
       "sameAs": "https://CRAN.R-project.org/package=dplyr"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "identifier": "png",
+      "name": "png",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=png"
     }
   ],
   "softwareRequirements": [
@@ -166,7 +178,7 @@
     }
   ],
   "codeRepository": "https://github.com/mikemahoney218/mvdf",
-  "fileSize": "88.897KB",
+  "fileSize": "98.09KB",
   "developmentStatus": "https://www.tidyverse.org/lifecycle/#experimental",
   "relatedLink": "https://mikemahoney218.github.io/mvdf/"
 }
