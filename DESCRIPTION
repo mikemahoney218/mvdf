@@ -28,7 +28,8 @@ Suggests:
     lintr,
     styler,
     testthat,
-    dplyr
+    dplyr,
+    png
 SystemRequirements: 
     Blender
 Imports: 
