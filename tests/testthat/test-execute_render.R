@@ -15,4 +15,42 @@ test_that("execute_render stops on failure", {
       flags = "-noaudio"
     )
   )
+
+
+  execute_render(
+    add_blender_endmatter(
+      add_render_image(
+        add_mesh_primitive(
+          add_light(
+            add_light(
+              add_camera(
+                create_blender_frontmatter(),
+                location = c(18.069, -6.7758, 5.2883),
+                rotation = c(86.6, 15.4, 53)
+              ),
+              location = c(2.9662, 1.8655, 5.9039),
+              rotation = c(37.3, 3.16, 107),
+              energy = 1000
+            ),
+            location = c(7.4562, 4.1455, 4.8439),
+            rotation = c(37.3, 3.16, 107),
+            energy = 1000
+          ),
+          object = mvdf_obj(
+            data = iris,
+            x = Sepal.Length,
+            y = Sepal.Width,
+            z = Petal.Length
+          ),
+          primitive = "ico_sphere",
+          radius = 0.05
+        ),
+        "temp.png"
+      ),
+      filepath = "temp.blend"
+    )
+  )
+
+  expect_snapshot(png::readPNG("temp.png"))
+
 })
