@@ -19,7 +19,9 @@ functions may always expect to use the full package name. Defaults to
 
 \item{delete}{A character vector of objects in the default Blender scene to
 delete. Defaults to all objects in the default scene (`Cube`, `Camera`, and
-`Light`). Set to `NULL` to not delete any objects.}
+`Light`). Set to `NULL` to not delete any objects. Note that not deleting the
+initial cube may result in your file failing to save due to a known bug in
+Blender.}
 
 \item{before}{Optionally, a character vector containing lines of code to add
 before package imports.}

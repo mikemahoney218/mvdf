@@ -12,7 +12,8 @@ test_that("execute_render stops on failure", {
           "this_is_nothing",
           depth = 10
         )
-      )
+      ),
+      flags = "-noaudio"
     )
   )
 })

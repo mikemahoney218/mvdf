@@ -4,7 +4,7 @@
 \alias{execute_render}
 \title{Execute a Python script in Blender}
 \usage{
-execute_render(script, blender = NULL)
+execute_render(script, blender = NULL, flags = NULL, addons = NULL)
 }
 \arguments{
 \item{script}{The Python script (either as a file path or as a character
@@ -12,6 +12,10 @@ vector with length 1) to execute.}
 
 \item{blender}{Path to the Blender executable to execute the Python script.
 If `NULL`, the default, uses the first result from `Sys.which("blender")`.}
+
+\item{flags}{Additional command-line arguments to pass to `blender`.}
+
+\item{addons}{A vector of Blender add-ons to enable on the command line.}
 }
 \value{
 A length 1 character vector with the output file path is returned

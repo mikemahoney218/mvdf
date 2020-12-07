@@ -12,6 +12,8 @@
 #' vector with length 1) to execute.
 #' @param blender Path to the Blender executable to execute the Python script.
 #' If `NULL`, the default, uses the first result from `Sys.which("blender")`.
+#' @param flags Additional command-line arguments to pass to `blender`.
+#' @param addons A vector of Blender add-ons to enable on the command line.
 #'
 #' @return A length 1 character vector with the output file path is returned
 #' invisibly if the function can identify the file the Python script saves to.
@@ -19,7 +21,9 @@
 #'
 #' @export
 execute_render <- function(script,
-                           blender = NULL) {
+                           blender = NULL,
+                           flags = NULL,
+                           addons = NULL) {
   if (is.null(blender)) blender <- Sys.which("blender")[[1]]
 
   if (blender == "") {
@@ -37,9 +41,16 @@ execute_render <- function(script,
     writeLines(script, scriptfile)
   }
 
+  argstring <- paste("-b -P", scriptfile)
+  if (length(args) > 0) argstring <- paste(argstring, flags, collapse = " ")
+  if (length(addons) > 0) argstring <- paste(argstring,
+                                             "--addons",
+                                             addons,
+                                             collapse = " ")
+
   # we want to raise errors in Blender as errors in R, so capture & grep
   systemputs <- paste0(system2(blender,
-    args = paste("-b -P", scriptfile),
+    args = argstring,
     stdout = TRUE,
     stderr = TRUE
   ),

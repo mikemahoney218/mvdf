@@ -56,3 +56,4 @@ deg_to_rad <- function(deg) {
   stopifnot(is.numeric(deg))
   deg * base::pi / 180
 }
+
