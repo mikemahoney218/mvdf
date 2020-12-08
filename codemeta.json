@@ -149,6 +149,12 @@
   "softwareRequirements": [
     {
       "@type": "SoftwareApplication",
+      "identifier": "R",
+      "name": "R",
+      "version": ">= 3.5"
+    },
+    {
+      "@type": "SoftwareApplication",
       "identifier": "methods",
       "name": "methods"
     },
@@ -178,7 +184,7 @@
     }
   ],
   "codeRepository": "https://github.com/mikemahoney218/mvdf",
-  "fileSize": "98.09KB",
+  "fileSize": "99.283KB",
   "developmentStatus": "https://www.tidyverse.org/lifecycle/#experimental",
   "relatedLink": "https://mikemahoney218.github.io/mvdf/"
 }
