@@ -5,9 +5,11 @@
 #'
 #' @template script
 #' @template amp_object
-#' @param primitive The primitive mesh type to create. See the official Blender
+#' @param primitive The primitive mesh type to create. Most popular options
+#' include "cone", "cube", "cylinder", "ico_sphere", "monkey", and "uv_sphere";
+#' see the official Blender documentation at
 # nolint start
-#' documentation at \url{https://docs.blender.org/api/blender_python_api_current/bpy.ops.mesh.html}
+#' \url{https://docs.blender.org/api/blender_python_api_current/bpy.ops.mesh.html}
 # nolint end
 #' for a full list of available primitives.
 #' @param location Either `NULL` (the default) or a vector of strings (in the

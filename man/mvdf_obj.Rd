@@ -25,7 +25,8 @@ values for each slot.}
 the grid system (the central point at 0, 0, 0) in meters in the given
 direction. Must have no `NA`, `NULL`, `NaN`, `Inf`, or `-Inf` values. If
 `data` is not `NULL`, the names of columns in `data` with values for the
-respective slot.}
+respective slot. Coordinates are assumed to be on a right-handed coordinate
+system with Z oriented as the natural "vertical" direction.}
 
 \item{idx}{Character: a unique identifier (or "index") for each object to be
 modeled. Must be unique with no `NA` or `NULL` values, but otherwise is

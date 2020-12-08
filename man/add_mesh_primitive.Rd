@@ -37,8 +37,10 @@ add_mesh_primitive_method(
 calculate the x, y, and z positions for each primitive. One primitive will be
 created for each row of `mvdf(object)`.}
 
-\item{primitive}{The primitive mesh type to create. See the official Blender
-documentation at \url{https://docs.blender.org/api/blender_python_api_current/bpy.ops.mesh.html}
+\item{primitive}{The primitive mesh type to create. Most popular options
+include "cone", "cube", "cylinder", "ico_sphere", "monkey", and "uv_sphere";
+see the official Blender documentation at
+\url{https://docs.blender.org/api/blender_python_api_current/bpy.ops.mesh.html}
 for a full list of available primitives.}
 
 \item{location}{Either `NULL` (the default) or a vector of strings (in the

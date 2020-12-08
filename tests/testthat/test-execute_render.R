@@ -48,9 +48,9 @@ test_that("execute_render stops on failure", {
             primitive = "ico_sphere",
             radius = 0.05
           ),
-          "temp.png"
+          tempfile(fileext = ".png")
         ),
-        filepath = "temp.blend"
+        filepath = tempfile(fileext = ".blend")
       ),
       flags = "-noaudio"
     ),

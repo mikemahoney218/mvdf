@@ -12,7 +12,9 @@ Class to attach basic material data to `mvdf_obj` objects
 \describe{
 \item{\code{x,y,z}}{Numeric: distance of the origin of the object from the origin of
 the grid system (the central point at 0, 0, 0) in meters in the given
-direction. Must have no `NA`, `NULL`, `NaN`, `Inf`, or `-Inf` values.}
+direction. Must have no `NA`, `NULL`, `NaN`, `Inf`, or `-Inf` values.
+Coordinates are assumed to be on a right-handed coordinate system with Z
+oriented as the natural "vertical" direction.}
 
 \item{\code{idx}}{Character: a unique identifier (or "index") for each object to be
 modeled. Must be unique with no `NA` or `NULL` values, but otherwise is
