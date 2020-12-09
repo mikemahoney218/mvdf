@@ -1,4 +1,4 @@
-#' Add code to add mesh primitives to a Blender script
+#' Add code to create mesh primitives to a Blender script
 #'
 #' This function generates code that will, when run inside Blender, create mesh
 #' primitives within a scene.

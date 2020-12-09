@@ -4,7 +4,7 @@
 \alias{add_mesh_primitive}
 \alias{add_mesh_primitive_method}
 \alias{add_mesh_primitive_method,mvdf_obj-method}
-\title{Add code to add mesh primitives to a Blender script}
+\title{Add code to create mesh primitives to a Blender script}
 \usage{
 add_mesh_primitive(
   script,
