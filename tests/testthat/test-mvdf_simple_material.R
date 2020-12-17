@@ -23,7 +23,7 @@ test_that("simple_material render methods function properly", {
       ),
       tempfile(fileext = ".blend")
     ),
-    flags = "-noaudio")
+    flags = "-noaudio -E BLENDER_WORKBENCH")
 
   expect_equal(
     sum(
