@@ -1,5 +1,7 @@
 test_that("simple_material render methods function properly", {
   skip_on_cran()
+  skip_on_os("mac")
+  skip_on_os("windows")
   sm_mvdf <- mvdf_simple_material(NULL,
                                   x = 0,
                                   y = 0,
