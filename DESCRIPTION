@@ -29,7 +29,7 @@ Suggests:
     styler,
     testthat,
     dplyr,
-    png
+    brio
 SystemRequirements: 
     Blender
 Depends:
@@ -37,13 +37,15 @@ Depends:
 Imports: 
     methods,
     rlang,
-    glue
+    glue,
+    uuid
 Collate: 
     'add_blender_endmatter.R'
     'add_camera.R'
     'mvdf.R'
     'add_empty.R'
     'add_light.R'
+    'mvdf_simple_material.R'
     'add_mesh_primitive.R'
     'add_render_image.R'
     'appendix.R'
@@ -54,6 +56,5 @@ Collate:
     'get_mvdf.R'
     'make_mvdf.R'
     'metadata.R'
-    'mvdf_simple_material.R'
     'show.R'
     'zzz.R'

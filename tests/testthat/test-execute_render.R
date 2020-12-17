@@ -56,5 +56,4 @@ test_that("execute_render stops on failure", {
     ),
     NA
   )
-
 })

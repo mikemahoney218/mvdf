@@ -4,6 +4,7 @@
 \alias{add_mesh_primitive}
 \alias{add_mesh_primitive_method}
 \alias{add_mesh_primitive_method,mvdf_obj-method}
+\alias{add_mesh_primitive_method,mvdf_simple_material-method}
 \title{Add code to create mesh primitives to a Blender script}
 \usage{
 add_mesh_primitive(
@@ -23,6 +24,14 @@ add_mesh_primitive_method(
 )
 
 \S4method{add_mesh_primitive_method}{mvdf_obj}(
+  object,
+  script,
+  primitive = "ico_sphere",
+  location = NULL,
+  ...
+)
+
+\S4method{add_mesh_primitive_method}{mvdf_simple_material}(
   object,
   script,
   primitive = "ico_sphere",

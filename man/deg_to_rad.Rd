@@ -15,5 +15,10 @@ A vector of the same length in radians
 \description{
 Convert decimal degrees to radians
 }
+\seealso{
+Other utilities: 
+\code{\link{build_location}()},
+\code{\link{pythonize_booleans}()}
+}
 \concept{utilities}
 \keyword{internal}

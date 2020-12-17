@@ -43,10 +43,13 @@ execute_render <- function(script,
 
   argstring <- paste("-b -P", scriptfile)
   if (length(args) > 0) argstring <- paste(argstring, flags, collapse = " ")
-  if (length(addons) > 0) argstring <- paste(argstring,
-                                             "--addons",
-                                             addons,
-                                             collapse = " ")
+  if (length(addons) > 0) {
+    argstring <- paste(argstring,
+      "--addons",
+      addons,
+      collapse = " "
+    )
+  }
 
   # we want to raise errors in Blender as errors in R, so capture & grep
   systemputs <- paste0(system2(blender,

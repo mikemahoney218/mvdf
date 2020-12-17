@@ -6,7 +6,6 @@
 #' @slot metallic Amount of mirror reflection for raytrace, as a float from
 #' 0-1.
 #' @slot roughness Roughness of the material, as a float from 0-1.
-#'
 #' @family classes and related functions
 #'
 #' @exportClass mvdf_simple_material
@@ -46,9 +45,11 @@ setValidity("mvdf_simple_material", function(object) {
 #' @param diffuse_color Diffuse color of the material, in either a RGBA array
 #' (if `translate_colors` is `TRUE`) or in any of the formats
 #' understood by [grDevices::col2rgb] (if `translate_colors` is `FALSE`).
+#' If missing, set to gray80.
 #' @param metallic Amount of mirror reflection for raytrace, as a float from
-#' 0-1.
-#' @param roughness Roughness of the material, as a float from 0-1.
+#' 0-1. If missing, set to 0.
+#' @param roughness Roughness of the material, as a float from 0-1. If missing,
+#' set to 0.
 #' @param translate_colors Logical: use `grDevices` to create RGBA arrays from
 #' `diffuse_color`?
 #' @param ... Additional arguments passed to [mvdf_obj]
@@ -64,36 +65,25 @@ mvdf_simple_material <- function(data = NULL,
   res_mvdf <- mvdf(res)
 
   if (!is.null(data)) {
-    diffuse_color <- tryCatch(diffuse_color,
-      error = function(e) rlang::ensym(diffuse_color)
-    )
-    diffuse_color <- data[[diffuse_color]]
+    diffuse_color <- eval_arg(data, diffuse_color)
 
-    metallic <- tryCatch(metallic,
-      error = function(e) rlang::ensym(metallic)
-    )
-    metallic <- data[[metallic]]
+    metallic <- eval_arg(data, metallic)
 
-    roughness <- tryCatch(roughness,
-      error = function(e) rlang::ensym(roughness)
-    )
-    roughness <- data[[roughness]]
+    roughness <- eval_arg(data, roughness)
+
   } else {
     if (diffuse_color == "diffuse_color") diffuse_color <- NA
     if (metallic == "metallic") metallic <- NA
     if (roughness == "roughness") roughness <- NA
   }
 
-  if (all_missing(metallic)) {
-    metallic <- 0
-  }
+  if (all_missing(metallic)) metallic <- 0
+  if (all_missing(roughness)) roughness <- 0
+  if (any_missing(metallic)) metallic[which(is_missing(metallic))] <- 0
+  if (any_missing(roughness)) roughness[which(is_missing(roughness))] <- 0
 
   if (length(metallic) == 1) {
     metallic <- rep(metallic, length(res_mvdf$idx))
-  }
-
-  if (all_missing(roughness)) {
-    roughness <- 0
   }
 
   if (length(roughness) == 1) {
@@ -101,7 +91,11 @@ mvdf_simple_material <- function(data = NULL,
   }
 
   if (all_missing(diffuse_color)) {
-    diffuse_color <- "#CCCCCCCC"
+    if (translate_colors) {
+      diffuse_color <- "#CCCCCCCC"
+    } else {
+      diffuse_color <- "0.8,0.8,0.8,0.8"
+    }
   }
 
   if (length(diffuse_color) == 1) {

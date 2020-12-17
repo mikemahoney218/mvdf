@@ -28,6 +28,7 @@ add_empty <- function(script,
                       type = "PLAIN_AXES",
                       location = NULL,
                       ...) {
+  # TODO: implement scale & rotation
   stopifnot(is.character(script) && (length(script) == 1))
   add_empty_method(
     object,
@@ -96,4 +97,3 @@ setMethod(
     )
   }
 )
-

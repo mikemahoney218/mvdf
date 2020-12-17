@@ -22,12 +22,14 @@ values for each slot.}
 
 \item{diffuse_color}{Diffuse color of the material, in either a RGBA array
 (if `translate_colors` is `TRUE`) or in any of the formats
-understood by [grDevices::col2rgb] (if `translate_colors` is `FALSE`).}
+understood by [grDevices::col2rgb] (if `translate_colors` is `FALSE`).
+If missing, set to gray80.}
 
 \item{metallic}{Amount of mirror reflection for raytrace, as a float from
-0-1.}
+0-1. If missing, set to 0.}
 
-\item{roughness}{Roughness of the material, as a float from 0-1.}
+\item{roughness}{Roughness of the material, as a float from 0-1. If missing,
+set to 0.}
 
 \item{translate_colors}{Logical: use `grDevices` to create RGBA arrays from
 `diffuse_color`?}

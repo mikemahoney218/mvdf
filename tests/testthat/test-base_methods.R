@@ -89,4 +89,3 @@ test_that("tail is stable", {
     readRDS("testdata/tail_all.rds")
   )
 })
-

@@ -32,16 +32,16 @@ mvdf_obj <- function(data = NULL,
                      metadata = NULL,
                      appendix = NULL) {
   if (!is.null(data)) {
-    x <- tryCatch(x, error = function(e) rlang::ensym(x))
-    y <- tryCatch(y, error = function(e) rlang::ensym(y))
-    z <- tryCatch(z, error = function(e) rlang::ensym(z))
+    x <- eval_arg(data, rlang::ensym(x))
+    y <- eval_arg(data, rlang::ensym(y))
+    z <- eval_arg(data, rlang::ensym(z))
 
-    x <- data[[x]]
-    y <- data[[y]]
-    z <- data[[z]]
+    if (any_missing(x)) {
+      if (all_missing(x)) stop("Couldn't determine x values.")
+      stop("x may not contain any missing values.")
+    }
 
-    idx <- tryCatch(idx, error = function(e) rlang::ensym(idx))
-    idx <- data[[idx]]
+    idx <- eval_arg(data, rlang::ensym(idx))
     if (is.null(idx)) {
       idx <- seq(1, length(x), 1)
 
