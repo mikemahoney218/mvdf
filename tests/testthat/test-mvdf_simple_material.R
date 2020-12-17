@@ -15,9 +15,13 @@ test_that("simple_material render methods function properly", {
   execute_render(
     add_blender_endmatter(
       add_render_image(
+        paste0(
         add_mesh_primitive(
           create_blender_frontmatter(delete = "Cube"),
           sm_mvdf
+        ),
+        "\n",
+        "bpy.data.scenes['Scene'].render.engine = 'CYCLES'\n"
         ),
         img_file
       ),
