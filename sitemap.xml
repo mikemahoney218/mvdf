@@ -34,6 +34,9 @@
     <loc>https://mikemahoney218.github.io/mvdf/reference/as.data.frame-mvdf_obj-method.html</loc>
   </url>
   <url>
+    <loc>https://mikemahoney218.github.io/mvdf/reference/build_location.html</loc>
+  </url>
+  <url>
     <loc>https://mikemahoney218.github.io/mvdf/reference/create_blender_frontmatter.html</loc>
   </url>
   <url>
@@ -41,6 +44,9 @@
   </url>
   <url>
     <loc>https://mikemahoney218.github.io/mvdf/reference/deg_to_rad.html</loc>
+  </url>
+  <url>
+    <loc>https://mikemahoney218.github.io/mvdf/reference/eval_arg.html</loc>
   </url>
   <url>
     <loc>https://mikemahoney218.github.io/mvdf/reference/execute_render.html</loc>
@@ -53,6 +59,9 @@
   </url>
   <url>
     <loc>https://mikemahoney218.github.io/mvdf/reference/headtail.html</loc>
+  </url>
+  <url>
+    <loc>https://mikemahoney218.github.io/mvdf/reference/is_missing.html</loc>
   </url>
   <url>
     <loc>https://mikemahoney218.github.io/mvdf/reference/metadataassign.html</loc>
@@ -74,6 +83,9 @@
   </url>
   <url>
     <loc>https://mikemahoney218.github.io/mvdf/reference/mvdfassign.html</loc>
+  </url>
+  <url>
+    <loc>https://mikemahoney218.github.io/mvdf/reference/pythonize_booleans.html</loc>
   </url>
   <url>
     <loc>https://mikemahoney218.github.io/mvdf/reference/set_appendix.html</loc>

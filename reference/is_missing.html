@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Set appendix values for an `mvdf_obj` object. — appendix&lt;- • mvdf</title>
+<title>Check values in a vector for missingness (NULL, NA, INF, or NaN) — is_missing • mvdf</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,8 @@
 
 
 
-<meta property="og:title" content="Set appendix values for an `mvdf_obj` object. — appendix&lt;-" />
-<meta property="og:description" content="Set appendix values for an `mvdf_obj` object." />
+<meta property="og:title" content="Check values in a vector for missingness (NULL, NA, INF, or NaN) — is_missing" />
+<meta property="og:description" content="Check values in a vector for missingness (NULL, NA, INF, or NaN)" />
 
 
 
@@ -112,30 +112,23 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Set appendix values for an `mvdf_obj` object.</h1>
+    <h1>Check values in a vector for missingness (NULL, NA, INF, or NaN)</h1>
     
-    <div class="hidden name"><code>appendixassign.Rd</code></div>
+    <div class="hidden name"><code>is_missing.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Set appendix values for an `mvdf_obj` object.</p>
+    <p>Check values in a vector for missingness (NULL, NA, INF, or NaN)</p>
     </div>
 
-    <pre class="usage"><span class='fu'><a href='appendix.html'>appendix</a></span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span> <span class='op'>&lt;-</span> <span class='va'>value</span>
-
-<span class='co'># S4 method for mvdf_obj</span>
-<span class='fu'><a href='appendix.html'>appendix</a></span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span> <span class='op'>&lt;-</span> <span class='va'>value</span></pre>
+    <pre class="usage"><span class='fu'>is_missing</span><span class='op'>(</span><span class='va'>obj</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>x</th>
-      <td><p>The object to set the appendix within.</p></td>
-    </tr>
-    <tr>
-      <th>value</th>
-      <td><p>The data to replace the appendix with.</p></td>
+      <th>obj</th>
+      <td><p>The vector of values to check</p></td>
     </tr>
     </table>
 
