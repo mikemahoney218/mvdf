@@ -133,8 +133,6 @@ setMethod(
       )
     }
 
-    # TODO: handle NA
-
     mvdf_df <- merge(mvdf_df,
       material_df,
       by = c("roughness", "metallic", "diffuse_color")
@@ -170,12 +168,6 @@ setMethod(
       arguments = mvdf_df$arguments,
       material_name = mvdf_df$material_name
     )
-
-    # import bpy
-    # bpy.data.materials.new("Material")
-    # bpy.data.materials['Material'].diffuse_color = 0.8,0.8,0.8,0.8
-    # bpy.ops.mesh.primitive_cube_add()
-    # bpy.context.object.data.materials.append(bpy.data.materials['Material'])
 
     paste0(
       script,

@@ -65,11 +65,9 @@ mvdf_simple_material <- function(data = NULL,
   res_mvdf <- mvdf(res)
 
   if (!is.null(data)) {
-    diffuse_color <- eval_arg(data, diffuse_color)
-
-    metallic <- eval_arg(data, metallic)
-
-    roughness <- eval_arg(data, roughness)
+    diffuse_color <- eval_arg(data, rlang::ensym(diffuse_color))
+    metallic <- eval_arg(data, rlang::ensym(metallic))
+    roughness <- eval_arg(data, rlang::ensym(roughness))
 
   } else {
     if (diffuse_color == "diffuse_color") diffuse_color <- NA
@@ -127,3 +125,27 @@ mvdf_simple_material <- function(data = NULL,
     roughness = as.numeric(roughness)
   )
 }
+
+setValidity("mvdf_simple_material", function(object) {
+  error <- vector("character")
+  n_issue <- 1
+
+  if (any_missing(object@diffuse_color)) {
+    error[n_issue] <- "@diffuse_color must not have any NULL or NA values."
+    n_issue <- n_issue + 1
+  }
+  if (any_missing(object@metallic)) {
+    error[n_issue] <- "@metallic must not have any NULL or NA values."
+    n_issue <- n_issue + 1
+  }
+  if (any_missing(object@roughness)) {
+    error[n_issue] <- "@roughness must not have any NULL or NA values."
+    n_issue <- n_issue + 1
+  }
+
+  if (n_issue > 1) {
+    return(paste0(error, collapse = "\n"))
+  }
+  return(TRUE)
+})
+
