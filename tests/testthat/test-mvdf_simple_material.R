@@ -32,7 +32,9 @@ test_that("simple_material render methods function properly", {
   expect_equal(
     sum(
       !brio::read_file_raw(img_file) ==
-        brio::read_file_raw("testdata/simple_material.png")
+        brio::read_file_raw(
+          system.file("tests/testthat/testdata/simple_material.png",
+                      package = "mvdf"))
     ),
     0,
     tolerance = 100 # this is about 99.9911% matching
