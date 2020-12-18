@@ -135,15 +135,27 @@
     },
     {
       "@type": "SoftwareApplication",
-      "identifier": "png",
-      "name": "png",
+      "identifier": "brio",
+      "name": "brio",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
         "name": "Comprehensive R Archive Network (CRAN)",
         "url": "https://cran.r-project.org"
       },
-      "sameAs": "https://CRAN.R-project.org/package=png"
+      "sameAs": "https://CRAN.R-project.org/package=brio"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "identifier": "devtools",
+      "name": "devtools",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=devtools"
     }
   ],
   "softwareRequirements": [
@@ -181,10 +193,22 @@
         "url": "https://cran.r-project.org"
       },
       "sameAs": "https://CRAN.R-project.org/package=glue"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "identifier": "uuid",
+      "name": "uuid",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=uuid"
     }
   ],
   "codeRepository": "https://github.com/mikemahoney218/mvdf",
-  "fileSize": "114.805KB",
+  "fileSize": "147.533KB",
   "developmentStatus": "https://www.tidyverse.org/lifecycle/#experimental",
   "relatedLink": "https://mikemahoney218.github.io/mvdf/"
 }
