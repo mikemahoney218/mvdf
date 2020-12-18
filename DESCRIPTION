@@ -29,7 +29,8 @@ Suggests:
     styler,
     testthat,
     dplyr,
-    brio
+    brio,
+    devtools
 SystemRequirements: 
     Blender
 Depends:
