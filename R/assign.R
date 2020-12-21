@@ -11,20 +11,30 @@
 #' (the default), uses the metadata from `object`.
 #' @param appendix The appendix to include in the new object. If `NULL`
 #' (the default), uses the appendix from `object`.
+#' @param newclass The class of the object to return. If `NULL` (the default),
+#' returns an object of class `class(object)`.
 #' @param ... Any additional arguments used in the constructor function being
 #' called.
+#'
+#' @name setvalues
+#'
+#' @return An S4 object (of class `newclass` if specified or `class(object)` if
+#' not) with updated values.
 #'
 #' @export
 set_values <- function(object,
                        mvdf = NULL,
                        metadata = NULL,
                        appendix = NULL,
+                       newclass = NULL,
                        ...) {
   if (is.null(mvdf)) mvdf <- mvdf(object)
   if (is.null(metadata)) metadata <- metadata(object)
   if (is.null(appendix)) appendix <- appendix(object)
+  class_fun <- class(object)[[1]]
+  if (!is.null(newclass)) class_fun <- newclass
 
-  res <- do.call(class(object)[[1]], list(
+  res <- do.call(class_fun, list(
     data = mvdf,
     metadata = metadata,
     appendix = appendix,
@@ -40,29 +50,20 @@ set_values <- function(object,
 ##
 ################################################################################
 
-#' Set slot values for objects subclassing `mvdf`
-#'
-#' This function returns a new object of the same class as `object` with the
-#' same metadata and appendix slots as `object`, but with other slots taking
-#' values from `mvdf`. Use it as a convenient, pipe-able way to set slot values
-#' for objects subclassing `mvdf`.
-#'
-#' @param mvdf The minimum viable data frame required by the S4 class
-#' @param object The object to update.
-#' @param metadata The metadata to include in the new object. If `NULL`
-#' (the default), uses the metadata from `object`.
-#' @param appendix The appendix to include in the new object. If `NULL`
-#' (the default), uses the appendix from `object`.
-#' @param ... Any additional arguments used in the constructor function being
-#' called.
-#'
+#' @name setvalues
 #' @export
-set_mvdf <- function(mvdf, object, metadata = NULL, appendix = NULL, ...) {
+set_mvdf <- function(mvdf,
+                     object,
+                     metadata = NULL,
+                     appendix = NULL,
+                     newclass = NULL,
+                     ...) {
   set_values(
     object = object,
     mvdf = mvdf,
     metadata = metadata,
     appendix = appendix,
+    newclass = newclass,
     ...
   )
 }
@@ -91,29 +92,20 @@ setMethod("mvdf<-", "mvdf_obj", function(x, value) {
 ##
 ################################################################################
 
-#' Set metadata values for objects subclassing `mvdf`
-#'
-#' This function returns a new object of the same class as `object` with the
-#' same mvdf and appendix slots as `object`, but with a new metadata. Use it as
-#' a convenient, pipe-able way to set metadata values for objects subclassing
-#' `mvdf`.
-#'
-#' @param metadata The metadata to include in the new object.
-#' @param object The object to update.
-#' @param mvdf The minimum viable data frame required by the S4 class. If `NULL`
-#' (the default), uses the mvdf from `object`.
-#' @param appendix The appendix to include in the new object. If `NULL`
-#' (the default), uses the appendix from `object`.
-#' @param ... Any additional arguments used in the constructor function being
-#' called.
-#'
+#' @name setvalues
 #' @export
-set_metadata <- function(metadata, object, mvdf = NULL, appendix = NULL, ...) {
+set_metadata <- function(metadata,
+                         object,
+                         mvdf = NULL,
+                         appendix = NULL,
+                         newclass = NULL,
+                         ...) {
   set_values(
     object = object,
     mvdf = mvdf,
     metadata = metadata,
     appendix = appendix,
+    newclass = newclass,
     ...
   )
 }
@@ -142,29 +134,20 @@ setMethod("metadata<-", "mvdf_obj", function(x, value) {
 ##
 ################################################################################
 
-#' Set appendix values for objects subclassing `mvdf`
-#'
-#' This function returns a new object of the same class as `object` with the
-#' same mvdf and metadata slots as `object`, but with a new appendix. Use it as
-#' a convenient, pipe-able way to set appendix values for objects subclassing
-#' `mvdf`.
-#'
-#' @param appendix The appendix to include in the new object.
-#' @param object The object to update.
-#' @param mvdf The minimum viable data frame required by the S4 class. If `NULL`
-#' (the default), uses the mvdf from `object`.
-#' @param metadata The metadata to include in the new object. If `NULL`
-#' (the default), uses the metadata from `object`.
-#' @param ... Any additional arguments used in the constructor function being
-#' called.
-#'
+#' @name setvalues
 #' @export
-set_appendix <- function(appendix, object, mvdf = NULL, metadata = NULL, ...) {
+set_appendix <- function(appendix,
+                         object,
+                         mvdf = NULL,
+                         metadata = NULL,
+                         newclass = NULL,
+                         ...) {
   set_values(
     object = object,
     mvdf = mvdf,
     metadata = metadata,
     appendix = appendix,
+    newclass = newclass,
     ...
   )
 }

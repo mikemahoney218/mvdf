@@ -65,9 +65,9 @@ mvdf_simple_material <- function(data = NULL,
   res_mvdf <- mvdf(res)
 
   if (!is.null(data)) {
-    diffuse_color <- eval_arg(data, rlang::ensym(diffuse_color))
-    metallic <- eval_arg(data, rlang::ensym(metallic))
-    roughness <- eval_arg(data, rlang::ensym(roughness))
+    diffuse_color <- eval_arg(data, diffuse_color)
+    metallic <- eval_arg(data, metallic)
+    roughness <- eval_arg(data, roughness)
 
   } else {
     if (diffuse_color == "diffuse_color") diffuse_color <- NA

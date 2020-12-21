@@ -1,0 +1,19 @@
+---
+title: "mvdf for Developers"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{mvdf for Developers}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(mvdf)
+```
