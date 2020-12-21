@@ -88,18 +88,15 @@
     <loc>https://mikemahoney218.github.io/mvdf/reference/pythonize_booleans.html</loc>
   </url>
   <url>
-    <loc>https://mikemahoney218.github.io/mvdf/reference/set_appendix.html</loc>
-  </url>
-  <url>
-    <loc>https://mikemahoney218.github.io/mvdf/reference/set_metadata.html</loc>
-  </url>
-  <url>
-    <loc>https://mikemahoney218.github.io/mvdf/reference/set_mvdf.html</loc>
-  </url>
-  <url>
-    <loc>https://mikemahoney218.github.io/mvdf/reference/set_values.html</loc>
+    <loc>https://mikemahoney218.github.io/mvdf/reference/setvalues.html</loc>
   </url>
   <url>
     <loc>https://mikemahoney218.github.io/mvdf/reference/show-mvdf_obj-method.html</loc>
+  </url>
+  <url>
+    <loc>https://mikemahoney218.github.io/mvdf/articles/dev-guide.html</loc>
+  </url>
+  <url>
+    <loc>https://mikemahoney218.github.io/mvdf/articles/intro-to-mvdf.html</loc>
   </url>
 </urlset>
