@@ -147,7 +147,7 @@ The absolute simplest rendering pipeline looks something like this:
 render_script <- 
   # Delete placeholder objects and import standard Python modules
   create_blender_frontmatter() %>%
-  # Add monkey heads at each point in space in our mvdf
+  # Add cubes at each point in space in our mvdf
   add_mesh_primitive(object = iris_mvdf,
                      primitive = "cube",
                      size = 0.2) %>% 

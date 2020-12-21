@@ -16,6 +16,11 @@ navbar:
     home:
       icon: fas fa-home fa-lg
       href: index.html
+    articles:
+      text: Vignettes
+      menu:
+      - text: Introduction to mvdf
+        href: articles/intro-to-mvdf.html
     reference:
       text: Reference
       href: reference/index.html
