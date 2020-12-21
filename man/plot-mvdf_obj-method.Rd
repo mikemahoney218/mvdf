@@ -9,9 +9,9 @@
 \arguments{
 \item{x}{Any object inheriting from mvdf_obj.}
 
-\item{...}{Arguments passed to base `plot`.}
+\item{y, ...}{Arguments passed to base `plot`.}
 }
 \description{
-Draw a basic scatter plot from the mvdf of an object inheriting from
+Draw a basic paired scatter plot from the mvdf of an object inheriting from
 `mvdf_obj`.
 }
