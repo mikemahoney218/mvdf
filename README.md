@@ -94,4 +94,4 @@ knitr::include_graphics("vignettes/iris_cubes.jpg")
 <img src="vignettes/iris_cubes.jpg" width="100%" />
 
 For more information, check out the [introductory
-vignette!](https://mikemahoney218.github.io/mvdf/articles/intro-to-mvdf.html)
+vignette\!](https://mikemahoney218.github.io/mvdf/articles/intro-to-mvdf.html)
