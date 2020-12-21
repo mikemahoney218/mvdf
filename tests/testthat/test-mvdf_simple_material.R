@@ -30,6 +30,8 @@ test_that("simple_material render methods function properly", {
     flags = "-noaudio -E CYCLES"
   )
 
+  skip_on_ci()
+
   expect_equal(
     sum(
       !brio::read_file_raw(img_file) ==
