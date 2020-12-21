@@ -163,7 +163,7 @@ setMethod(
     mvdf_df$arguments <- paste0(dots, mvdf_df$location)
     mvdf_df$object_call <- glue::glue(
       "bpy.ops.mesh.primitive_{primitive}_add({arguments})\n",
-      "bpy.context.object.data.materials.append(bpy.data.materials['{material_name}'])\n",
+      "bpy.context.object.data.materials.append(bpy.data.materials['{material_name}'])\n", # nolint
       primitive = primitive,
       arguments = mvdf_df$arguments,
       material_name = mvdf_df$material_name

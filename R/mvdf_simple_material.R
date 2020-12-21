@@ -68,7 +68,6 @@ mvdf_simple_material <- function(data = NULL,
     diffuse_color <- eval_arg(data, diffuse_color)
     metallic <- eval_arg(data, metallic)
     roughness <- eval_arg(data, roughness)
-
   } else {
     if (diffuse_color == "diffuse_color") diffuse_color <- NA
     if (metallic == "metallic") metallic <- NA
@@ -148,4 +147,3 @@ setValidity("mvdf_simple_material", function(object) {
   }
   return(TRUE)
 })
-
