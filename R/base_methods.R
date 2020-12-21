@@ -54,3 +54,14 @@ methods::setMethod("as.data.frame", "mvdf_obj", function(x,
     ...
   ))
 })
+
+#' Generic X-Y Plotting
+#'
+#' Draw a basic scatter plot from the mvdf of an object inheriting from
+#' `mvdf_obj`.
+#'
+#' @param x Any object inheriting from mvdf_obj.
+#' @param ... Arguments passed to base `plot`.
+#'
+#' @exportMethod plot
+methods::setMethod("plot", "mvdf_obj", function(x, ...) plot(mvdf(x), ...))
