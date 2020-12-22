@@ -9,6 +9,7 @@ navbar:
   structure:
     right:
     - home
+    - articles
     - reference
     - news
     - github
