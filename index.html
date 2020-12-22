@@ -98,6 +98,7 @@
 <p>You can install the development version of <code>mvdf</code> from GitHub via:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span><span class="op">(</span><span class="st">"mikemahoney218/mvdf"</span><span class="op">)</span></code></pre></div>
+<p>You’ll also need to install <a href="https://www.blender.org/download/">Blender</a> separately.</p>
 </div>
 <div id="whats-an-mvdf-anyway" class="section level2">
 <h2 class="hasAnchor">
@@ -120,7 +121,7 @@
   <span class="co"># Delete placeholder objects and import standard Python modules</span>
   <span class="fu"><a href="reference/create_blender_frontmatter.html">create_blender_frontmatter</a></span><span class="op">(</span><span class="op">)</span> <span class="op">%&gt;%</span>
   <span class="co"># Add cubes at each point in space in our mvdf</span>
-  <span class="fu"><a href="reference/add_mesh_primitive.html">add_mesh_primitive</a></span><span class="op">(</span>object <span class="op">=</span> <span class="va">iris_mvdf</span>,
+  <span class="fu"><a href="reference/add_primitive.html">add_mesh_primitive</a></span><span class="op">(</span>object <span class="op">=</span> <span class="va">iris_mvdf</span>,
                      primitive <span class="op">=</span> <span class="st">"cube"</span>, 
                      size <span class="op">=</span> <span class="fl">0.2</span><span class="op">)</span> <span class="op">%&gt;%</span> 
   <span class="co"># Save the output to save_render.blend</span>
