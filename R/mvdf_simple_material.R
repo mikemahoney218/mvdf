@@ -136,9 +136,15 @@ setValidity("mvdf_simple_material", function(object) {
   if (any_missing(object@metallic)) {
     error[n_issue] <- "@metallic must not have any NULL or NA values."
     n_issue <- n_issue + 1
+  } else if (any(object@metallic < 0 | object@metallic > 1)) {
+    error[n_issue] <- "@metallic must be between 0 and 1"
+    n_issue <- n_issue + 1
   }
   if (any_missing(object@roughness)) {
     error[n_issue] <- "@roughness must not have any NULL or NA values."
+    n_issue <- n_issue + 1
+  } else if (any(object@roughness < 0 | object@roughness > 1)) {
+    error[n_issue] <- "@roughness must be between 0 and 1"
     n_issue <- n_issue + 1
   }
 
