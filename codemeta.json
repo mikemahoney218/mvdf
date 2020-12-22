@@ -208,7 +208,10 @@
     }
   ],
   "codeRepository": "https://github.com/mikemahoney218/mvdf",
-  "fileSize": "147.533KB",
-  "developmentStatus": "https://www.tidyverse.org/lifecycle/#experimental",
-  "relatedLink": "https://mikemahoney218.github.io/mvdf/"
+  "fileSize": "1483.408KB",
+  "developmentStatus": ["https://www.tidyverse.org/lifecycle/#experimental", "https://www.repostatus.org/#wip"],
+  "relatedLink": "https://mikemahoney218.github.io/mvdf/",
+  "readme": "https://github.com/mikemahoney218/mvdf/blob/main/README.md",
+  "contIntegration": "https://codecov.io/gh/mikemahoney218/terrainr",
+  "keywords": ["r", "rstats", "r-package", "blender", "cran"]
 }
