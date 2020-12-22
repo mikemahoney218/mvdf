@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# mvdf
+# mvdf <a href='https://mikemahoney218.github.io/mvdf'><img src='man/figures/logo.png' align="right" height="138" /></a>
 
 <!-- badges: start -->
 
@@ -97,4 +97,4 @@ knitr::include_graphics("vignettes/iris_cubes.jpg")
 <img src="vignettes/iris_cubes.jpg" width="100%" />
 
 For more information, check out the [introductory
-vignette\!](https://mikemahoney218.github.io/mvdf/articles/intro-to-mvdf.html)
+vignette!](https://mikemahoney218.github.io/mvdf/articles/intro-to-mvdf.html)

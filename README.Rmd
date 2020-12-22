@@ -13,7 +13,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-# mvdf
+# mvdf <a href='https://mikemahoney218.github.io/mvdf'><img src='man/figures/logo.png' align="right" height="138" /></a>
 
 <!-- badges: start -->
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
