@@ -5,5 +5,4 @@ dev.Rmd
 inst/doc
 doc
 Meta
-*.png
 ignore.txt
