@@ -55,7 +55,7 @@ mvdf_obj <- function(data = NULL,
     z <- eval_arg(data, rlang::ensym(z))
 
     if (any_missing(x)) {
-      if (all_missing(x)) stop("Couldn't determine x values.")
+      # prevent confusing error messages in index generation
       stop("x may not contain any missing values.")
     }
 

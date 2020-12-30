@@ -16,7 +16,7 @@ test_that("multiplication works", {
       mvdf_obj(x = 1, y = 1, z = 1),
       "torus"
     ),
-    "bpy.ops.surface.primitive_nurbs_surface_torus_add\\(location=\\(1, 1, 1\\)\\)"
+    "bpy.ops.surface.primitive_nurbs_surface_torus_add\\(location=\\(1, 1, 1\\)\\)" # nolint
   )
 
   expect_match(
@@ -24,6 +24,6 @@ test_that("multiplication works", {
       create_blender_frontmatter(),
       mvdf_obj(x = 1, y = 1, z = 1),
     ),
-    "bpy.ops.curve.primitive_bezier_circle_add\\(location=\\(1, 1, 1\\)\\)"
+    "bpy.ops.curve.primitive_bezier_circle_add\\(location=\\(1, 1, 1\\)\\)" # nolint
   )
 })

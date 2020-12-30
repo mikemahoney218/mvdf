@@ -20,4 +20,9 @@ test_that("mvdf are stable", {
     mvdf_obj(data.frame(x = c(1, 1), y = c(1, 1), z = c(1, 1))),
     mvdf_obj(x = c(1, 1), y = c(1, 1), z = c(1, 1))
   )
+
+  expect_error(
+    mvdf_obj(data.frame(x = NA)),
+    "x may not contain any missing values"
+  )
 })

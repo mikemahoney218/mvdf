@@ -65,9 +65,7 @@ setMethod(
     if (length(dots) == 0) {
       dots <- NULL
     } else {
-      # friendly conversion from R logicals to Python
-      dots[which(is.logical(dots) && dots == FALSE)] <- "False"
-      dots[which(is.logical(dots) && dots == TRUE)] <- "True"
+      dots <- pythonize_booleans(dots)
       dots <- create_options(dots)
     }
 

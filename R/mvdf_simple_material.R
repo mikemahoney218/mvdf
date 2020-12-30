@@ -68,36 +68,20 @@ mvdf_simple_material <- function(data = NULL,
     diffuse_color <- eval_arg(data, diffuse_color)
     metallic <- eval_arg(data, metallic)
     roughness <- eval_arg(data, roughness)
-  } else {
-    if (diffuse_color == "diffuse_color") diffuse_color <- NA
-    if (metallic == "metallic") metallic <- NA
-    if (roughness == "roughness") roughness <- NA
   }
 
-  if (all_missing(metallic)) metallic <- 0
-  if (all_missing(roughness)) roughness <- 0
-  if (any_missing(metallic)) metallic[which(is_missing(metallic))] <- 0
-  if (any_missing(roughness)) roughness[which(is_missing(roughness))] <- 0
+  length_out <- length(res_mvdf$idx)
 
-  if (length(metallic) == 1) {
-    metallic <- rep(metallic, length(res_mvdf$idx))
-  }
-
-  if (length(roughness) == 1) {
-    roughness <- rep(roughness, length(res_mvdf$idx))
-  }
-
-  if (all_missing(diffuse_color)) {
-    if (translate_colors) {
-      diffuse_color <- "#CCCCCCCC"
-    } else {
-      diffuse_color <- "0.8,0.8,0.8,0.8"
-    }
-  }
-
-  if (length(diffuse_color) == 1) {
-    diffuse_color <- rep(diffuse_color, length(res_mvdf$idx))
-  }
+  diffuse_color <- calc_val(
+    diffuse_color,
+    length_out,
+    ifelse(translate_colors,
+      "#CCCCCCCC",
+      "0.8,0.8,0.8,0.8"
+    )
+  )
+  metallic <- calc_val(metallic, length_out)
+  roughness <- calc_val(roughness, length_out)
 
   if (translate_colors) {
     diffuse_color <- vapply(diffuse_color,

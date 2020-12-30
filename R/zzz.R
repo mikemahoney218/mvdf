@@ -112,3 +112,26 @@ eval_arg <- function(data, arg) {
   arg <- tryCatch(arg, error = function(e) rlang::ensym(arg))
   tryCatch(data[[arg]], error = function(e) arg)
 }
+
+#' Standard way to replace & replicate values for class-creation functions
+#'
+#' @param vec The vector to replace and replicate values throughout
+#' @param length_out The target length of the vector
+#' @param replace_val The value to replace missing values with
+#'
+#' @return A vector of length `length_out` with missing values replaced by
+#' `replace_val`
+#'
+#' @keywords internal
+calc_val <- function(vec, length_out, replace_val = 0) {
+  if (length(vec) == 1 &&
+    vec == deparse(substitute(vec))) {
+    vec <- NA
+  }
+
+  if (all_missing(vec)) vec <- replace_val
+  if (any_missing(vec)) vec[which(is_missing(vec))] <- replace_val
+
+  if (length(vec) == 1) vec <- rep(vec, length_out)
+  vec
+}

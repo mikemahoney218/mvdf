@@ -45,6 +45,13 @@ test_that("simple_material render methods function properly", {
 test_that("simple_material functions as expected", {
   expect_equal(
     mvdf_simple_material(data.frame(x = c(1, 1), y = c(1, 1), z = c(1, 1))),
-    mvdf_simple_material(x = c(1, 1), y = c(1, 1), z = c(1, 1))
+    mvdf_simple_material(
+      x = c(1, 1),
+      y = c(1, 1),
+      z = c(1, 1),
+      metallic = c(0, NA),
+      roughness = c(NA, 0),
+      diffuse_color = c("0.8,0.8,0.8,0.8", NA)
+    )
   )
 })
