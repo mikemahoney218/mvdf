@@ -14,7 +14,7 @@ public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostat
 status](https://www.r-pkg.org/badges/version/mvdf)](https://CRAN.R-project.org/package=mvdf)
 [![R-CMD-check](https://github.com/mikemahoney218/mvdf/workflows/R-CMD-check/badge.svg)](https://github.com/mikemahoney218/mvdf/actions)
 [![lint](https://github.com/mikemahoney218/mvdf/workflows/lint/badge.svg)](https://github.com/mikemahoney218/mvdf/actions)
-[![codecov](https://codecov.io/gh/mikemahoney218/mvdf/branch/master/graph/badge.svg)](https://codecov.io/gh/mikemahoney218/mvdf)
+[![codecov](https://codecov.io/gh/mikemahoney218/mvdf/branch/main/graph/badge.svg)](https://codecov.io/gh/mikemahoney218/mvdf)
 [![License:
 MIT](https://img.shields.io/badge/license-MIT-green)](https://choosealicense.com/licenses/mit/)
 <!-- badges: end -->
@@ -97,4 +97,4 @@ knitr::include_graphics("vignettes/iris_cubes.jpg")
 <img src="vignettes/iris_cubes.jpg" width="100%" />
 
 For more information, check out the [introductory
-vignette!](https://mikemahoney218.github.io/mvdf/articles/intro-to-mvdf.html)
+vignette\!](https://mikemahoney218.github.io/mvdf/articles/intro-to-mvdf.html)
