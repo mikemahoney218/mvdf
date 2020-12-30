@@ -194,7 +194,7 @@ be on a right-handed coordinate system with Z oriented as the natural
 <span class="co"># This is the same as set_mvdf(temp_mvdf, iris_mvdf)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/try.html">try</a></span><span class="op">(</span><span class="fu"><a href="../reference/mvdf.html">mvdf</a></span><span class="op">(</span><span class="va">iris_mvdf</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="va">temp_mvdf</span><span class="op">)</span>
 <span class="co">#&gt; Error in mvdf_obj(data = structure(list(x = c(NA, NA, NA, NA, NA, NA,  : </span>
-<span class="co">#&gt;   Couldn't determine x values.</span></code></pre></div>
+<span class="co">#&gt;   x may not contain any missing values.</span></code></pre></div>
 <p>Not all definitions can be automatically checked (for instance, there’s no real way to tell if your data is oriented correctly or stored in meters). In those cases, <code>mvdf</code> objects (and rendering methods) expect the inputs to be correct without any validation.</p>
 </div>
 <div id="making-simple-renders" class="section level2">
