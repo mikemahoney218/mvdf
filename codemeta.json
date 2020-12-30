@@ -208,7 +208,7 @@
     }
   ],
   "codeRepository": "https://github.com/mikemahoney218/mvdf",
-  "fileSize": "1484.304KB",
+  "fileSize": "1516.367KB",
   "developmentStatus": ["https://www.tidyverse.org/lifecycle/#experimental", "https://www.repostatus.org/#wip"],
   "relatedLink": "https://mikemahoney218.github.io/mvdf/",
   "readme": "https://github.com/mikemahoney218/mvdf/blob/main/README.md",
@@ -220,5 +220,6 @@
     "blender",
     "cran"
   ],
-  "releaseNotes": "https://github.com/mikemahoney218/mvdf/blob/master/NEWS.md"
+  "releaseNotes": "https://github.com/mikemahoney218/mvdf/blob/master/NEWS.md",
+  "issueTracker": "https://github.com/mikemahoney218/mvdf/issues"
 }
