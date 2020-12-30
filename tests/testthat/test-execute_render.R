@@ -5,7 +5,7 @@ test_that("execute_render stops on failure", {
   trunk <- mvdf_obj(x = 0, y = 0, z = 5)
   expect_error(
     execute_render(
-      create_blender_endmatter(
+      add_blender_endmatter(
         filepath = "tree.blend",
         add_mesh_primitive(
           create_blender_frontmatter(),
@@ -14,7 +14,8 @@ test_that("execute_render stops on failure", {
           depth = 10
         )
       ),
-      flags = "-noaudio"
+      flags = "-noaudio",
+      addons = "add_curve_sapling"
     )
   )
 })

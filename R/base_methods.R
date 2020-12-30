@@ -64,6 +64,8 @@ methods::setMethod("as.data.frame", "mvdf_obj", function(x,
 #' @param y,... Arguments passed to base `plot`.
 #'
 #' @exportMethod plot
-methods::setMethod("plot",
-                   "mvdf_obj",
-                   function(x, y, ...) plot(mvdf(x), y, ...))
+methods::setMethod(
+  "plot",
+  "mvdf_obj",
+  function(x, y, ...) plot(mvdf(x), y, ...)
+)

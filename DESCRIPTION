@@ -14,6 +14,7 @@ Description: A small, self-contained, minimum viable data format providing a
     setter, and validation methods designed to be extended for more specific 
     rendering approaches.
 URL: https://mikemahoney218.github.io/mvdf/
+BugReports: https://github.com/mikemahoney218/mvdf/issues
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
@@ -55,7 +56,6 @@ Collate:
     'create_blender_frontmatter.R'
     'execute_render.R'
     'get_mvdf.R'
-    'make_mvdf.R'
     'metadata.R'
     'show.R'
     'zzz.R'

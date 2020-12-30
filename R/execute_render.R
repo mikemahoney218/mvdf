@@ -27,11 +27,11 @@ execute_render <- function(script,
   if (is.null(blender)) blender <- Sys.which("blender")[[1]]
 
   if (blender == "") {
-    stop(
+    stop( # nocov start
       "Couldn't find Blender.\n",
       "Please install Blender from https://www.blender.org/ \n",
       "or, if already installed, pass the path to the executable to `blender`."
-    )
+    ) # nocov end
   }
 
   if (file.exists(script)) {
@@ -60,9 +60,7 @@ execute_render <- function(script,
   collapse = "\n"
   )
 
-  if (any(grepl("Traceback", systemputs))) {
-    stop(systemputs)
-  }
+  if (any(grepl("Traceback", systemputs))) stop(systemputs)
 
   message(paste(systemputs, "(Success!)"))
 
@@ -78,5 +76,5 @@ execute_render <- function(script,
     return(invisible(NULL))
   }
 
-  return(invisible(outfile))
+  invisible(outfile)
 }

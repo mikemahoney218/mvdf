@@ -15,4 +15,9 @@ test_that("mvdf are stable", {
     iris_mvdf,
     out_mvdf
   )
+
+  expect_equal(
+    mvdf_obj(data.frame(x = c(1, 1), y = c(1, 1), z = c(1, 1))),
+    mvdf_obj(x = c(1, 1), y = c(1, 1), z = c(1, 1))
+  )
 })

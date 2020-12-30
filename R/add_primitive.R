@@ -120,15 +120,17 @@ setMethod(
     # This should almost never be tripped, but just in case we get extremely
     # unlucky while generating random names...
     while (length(material_df$material_name) !=
-           length(unique(material_df$material_name))) {
+      length(unique(material_df$material_name))) {
+      # nocov start
       material_df$material_name <- uuid::UUIDgenerate(
         n = nrow(material_df)
       )
+      # nocov end
     }
 
     mvdf_df <- merge(mvdf_df,
-                     material_df,
-                     by = c("roughness", "metallic", "diffuse_color")
+      material_df,
+      by = c("roughness", "metallic", "diffuse_color")
     )
 
     material_df$material_call <- glue::glue(
@@ -198,8 +200,12 @@ add_surface_primitive <- function(script,
                                   primitive = "torus",
                                   location = NULL,
                                   ...) {
-  if (!grepl("nurbs_surface_", primitive)) primitive <- paste0("nurbs_surface_",
-                                                               primitive)
+  if (!grepl("nurbs_surface_", primitive)) {
+    primitive <- paste0(
+      "nurbs_surface_",
+      primitive
+    )
+  }
   add_primitive(
     object,
     script,
