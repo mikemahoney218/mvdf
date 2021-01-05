@@ -14,7 +14,7 @@ calc_val(vec, length_out, replace_val = 0)
 \item{replace_val}{The value to replace missing values with}
 }
 \value{
-A vector of length `length_out` with missing values replaced by 
+A vector of length `length_out` with missing values replaced by
 `replace_val`
 }
 \description{

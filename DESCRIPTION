@@ -40,7 +40,7 @@ Imports:
     methods,
     rlang,
     glue,
-    uuid
+    proceduralnames
 Collate: 
     'add_blender_endmatter.R'
     'add_camera.R'

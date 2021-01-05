@@ -114,7 +114,7 @@ setMethod(
       "roughness"
     )])
     # TODO: Swap to proceduralnames
-    material_df$material_name <- uuid::UUIDgenerate(
+    material_df$material_name <- proceduralnames::make_english_names(
       n = nrow(material_df)
     )
     # This should almost never be tripped, but just in case we get extremely
@@ -122,7 +122,7 @@ setMethod(
     while (length(material_df$material_name) !=
       length(unique(material_df$material_name))) {
       # nocov start
-      material_df$material_name <- uuid::UUIDgenerate(
+      material_df$material_name <- proceduralnames::make_english_names(
         n = nrow(material_df)
       )
       # nocov end
