@@ -100,6 +100,36 @@
     
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://mikemahoney218.github.io/mvdf/">mvdf</a></span><span class="op">)</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; Attaching package: 'dplyr'</span>
+<span class="co">#&gt; The following objects are masked from 'package:stats':</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt;     filter, lag</span>
+<span class="co">#&gt; The following objects are masked from 'package:base':</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt;     intersect, setdiff, setequal, union</span>
+<span class="fu"><a href="https://tibble.tidyverse.org/reference/tribble.html">tribble</a></span><span class="op">(</span>
+  <span class="op">~</span> <span class="va">Slot</span>, <span class="op">~</span> <span class="va">Class</span>, <span class="op">~</span> <span class="va">Package</span>, <span class="op">~</span> <span class="va">Description</span>, <span class="op">~</span> <span class="va">Units</span>, <span class="op">~</span> <span class="va">Class</span>, <span class="op">~</span> <span class="va">Unique</span>, <span class="op">~</span> <span class="va">Not_missing</span>,
+  <span class="st">"x"</span>, <span class="st">"mvdf_obj"</span>, <span class="st">"mvdf"</span>, <span class="st">'Distance of the origin of the object from the origin of the grid system (the central point at 0, 0, 0) in meters in the x direction. Coordinates are assumed to be on a right-handed coordinate system with Z oriented as the natural "vertical" direction.'</span>, <span class="st">"meters"</span>, <span class="st">"Numeric"</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>,
+  <span class="st">"y"</span>, <span class="st">"mvdf_obj"</span>, <span class="st">"mvdf"</span>, <span class="st">'Distance of the origin of the object from the origin of the grid system (the central point at 0, 0, 0) in meters in the y direction. Coordinates are assumed to be on a right-handed coordinate system with Z oriented as the natural "vertical" direction.'</span>, <span class="st">"meters"</span>, <span class="st">"Numeric"</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>,
+  <span class="st">"z"</span>, <span class="st">"mvdf_obj"</span>, <span class="st">"mvdf"</span>, <span class="st">'Distance of the origin of the object from the origin of the grid system (the central point at 0, 0, 0) in meters in the z direction. Coordinates are assumed to be on a right-handed coordinate system with Z oriented as the natural "vertical" direction.'</span>, <span class="st">"meters"</span>, <span class="st">"Numeric"</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>,
+  <span class="st">"idx"</span>, <span class="st">"mvdf_obj"</span>, <span class="st">"mvdf"</span>, <span class="st">'A unique identifier (or "index") for each object to be modeled.'</span>, <span class="cn">NA</span>, <span class="st">"Character"</span>, <span class="cn">TRUE</span>, <span class="cn">TRUE</span>,
+  <span class="st">"diffuse_color"</span>, <span class="st">"mvdf_simple_material"</span>, <span class="st">"mvdf"</span>, <span class="st">"Diffuse color of the material, as an RGBA array of floats scaled from 0-1."</span>, <span class="st">"Character"</span>, <span class="cn">NA</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>,
+  <span class="st">"metallic"</span>, <span class="st">"mvdf_simple_material"</span>, <span class="st">"mvdf"</span>, <span class="st">"Amount of mirror reflection for raytrace, as a float from 0-1"</span>, <span class="st">"Numeric"</span>, <span class="st">"Proportion"</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>,
+  <span class="st">"roughness"</span>, <span class="st">"mvdf_simple_material"</span>, <span class="st">"mvdf"</span>, <span class="st">"Roughness of the material, as a float from 0-1."</span>, <span class="st">"Numeric"</span>, <span class="st">"Proportion"</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>
+<span class="op">)</span>
+<span class="co">#&gt; # A tibble: 7 x 8</span>
+<span class="co">#&gt;   Slot    Class    Package Description            Units Class Unique Not_missing</span>
+<span class="co">#&gt;   &lt;chr&gt;   &lt;chr&gt;    &lt;chr&gt;   &lt;chr&gt;                  &lt;chr&gt; &lt;chr&gt; &lt;lgl&gt;  &lt;lgl&gt;      </span>
+<span class="co">#&gt; 1 x       mvdf_obj mvdf    "Distance of the orig… mete… Nume… FALSE  TRUE       </span>
+<span class="co">#&gt; 2 y       mvdf_obj mvdf    "Distance of the orig… mete… Nume… FALSE  TRUE       </span>
+<span class="co">#&gt; 3 z       mvdf_obj mvdf    "Distance of the orig… mete… Nume… FALSE  TRUE       </span>
+<span class="co">#&gt; 4 idx     mvdf_obj mvdf    "A unique identifier … &lt;NA&gt;  Char… TRUE   TRUE       </span>
+<span class="co">#&gt; 5 diffus… mvdf_si… mvdf    "Diffuse color of the… Char… &lt;NA&gt;  FALSE  FALSE      </span>
+<span class="co">#&gt; 6 metall… mvdf_si… mvdf    "Amount of mirror ref… Nume… Prop… FALSE  FALSE      </span>
+<span class="co">#&gt; 7 roughn… mvdf_si… mvdf    "Roughness of the mat… Nume… Prop… FALSE  FALSE</span></code></pre></div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
