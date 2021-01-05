@@ -5,8 +5,8 @@
 #'
 #' @template amp_object
 #' @template script
-#' @param category What category of primitive to add. This function works well
-#' with `mesh`, `curve`, and `surface` primitives.
+# @param category What category of primitive to add. This function works well
+# with `mesh`, `curve`, and `surface` primitives.
 #' @param primitive The primitive type to create. See the official Blender
 #' documentation at
 # nolint start
@@ -31,7 +31,8 @@
 #' code for creating primitives added.
 #'
 #' @name add_primitive
-#'
+NULL
+
 setGeneric(
   "add_primitive",
   function(object,
@@ -44,7 +45,6 @@ setGeneric(
   }
 )
 
-#' @rdname add_primitive
 setMethod(
   "add_primitive",
   "mvdf_obj",
@@ -87,7 +87,6 @@ setMethod(
 )
 
 #' @include mvdf_simple_material.R
-#' @rdname add_primitive
 setMethod(
   "add_primitive",
   "mvdf_simple_material",

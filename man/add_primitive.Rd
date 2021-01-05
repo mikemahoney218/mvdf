@@ -2,33 +2,11 @@
 % Please edit documentation in R/add_primitive.R
 \name{add_primitive}
 \alias{add_primitive}
-\alias{add_primitive,mvdf_obj-method}
-\alias{add_primitive,mvdf_simple_material-method}
 \alias{add_mesh_primitive}
 \alias{add_surface_primitive}
 \alias{add_curve_primitive}
 \title{Add code to add primitives to a Blender script}
 \usage{
-add_primitive(object, script, category, primitive, location = NULL, ...)
-
-\S4method{add_primitive}{mvdf_obj}(
-  object,
-  script,
-  category,
-  primitive = "ico_sphere",
-  location = NULL,
-  ...
-)
-
-\S4method{add_primitive}{mvdf_simple_material}(
-  object,
-  script,
-  category,
-  primitive = "ico_sphere",
-  location = NULL,
-  ...
-)
-
 add_mesh_primitive(
   script,
   object,
@@ -54,14 +32,11 @@ add_curve_primitive(
 )
 }
 \arguments{
+\item{script}{The Python script to append the generated code onto.}
+
 \item{object}{An object inheriting from [mvdf_obj] which will be used to
 calculate the x, y, and z positions for each primitive. One primitive will be
 created for each row of `mvdf(object)`.}
-
-\item{script}{The Python script to append the generated code onto.}
-
-\item{category}{What category of primitive to add. This function works well
-with `mesh`, `curve`, and `surface` primitives.}
 
 \item{primitive}{The primitive type to create. See the official Blender
 documentation at

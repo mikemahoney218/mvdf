@@ -42,8 +42,7 @@ create_options <- function(dts) {
       dts,
       SIMPLIFY = FALSE
     ),
-    ", ",
-    collapse = ","
+    ", "
   )
 }
 
