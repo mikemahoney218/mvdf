@@ -196,19 +196,19 @@
     },
     {
       "@type": "SoftwareApplication",
-      "identifier": "uuid",
-      "name": "uuid",
+      "identifier": "proceduralnames",
+      "name": "proceduralnames",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
         "name": "Comprehensive R Archive Network (CRAN)",
         "url": "https://cran.r-project.org"
       },
-      "sameAs": "https://CRAN.R-project.org/package=uuid"
+      "sameAs": "https://CRAN.R-project.org/package=proceduralnames"
     }
   ],
   "codeRepository": "https://github.com/mikemahoney218/mvdf",
-  "fileSize": "1516.367KB",
+  "fileSize": "1519.126KB",
   "developmentStatus": ["https://www.tidyverse.org/lifecycle/#experimental", "https://www.repostatus.org/#wip"],
   "relatedLink": "https://mikemahoney218.github.io/mvdf/",
   "readme": "https://github.com/mikemahoney218/mvdf/blob/main/README.md",
