@@ -36,11 +36,17 @@ is_missing <- function(obj) {
 #' @keywords internal
 create_options <- function(dts) {
   paste0(
-    mapply(
-      function(nm, ob) paste0(nm, "=", ob),
-      names(dts),
-      dts,
-      SIMPLIFY = FALSE
+    do.call(
+      paste,
+      c(
+        mapply(
+          function(nm, ob) paste0(nm, "=", ob),
+          names(dts),
+          dts,
+          SIMPLIFY = FALSE
+        ),
+        sep = ","
+      )
     ),
     ", "
   )
