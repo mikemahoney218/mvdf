@@ -69,3 +69,27 @@ methods::setMethod(
   "mvdf_obj",
   function(x, y, ...) plot(mvdf(x), y, ...)
 )
+
+#' The Number of Rows/Columns of an mvdf
+#' 
+#' `nrow` and `ncol` return the number of rows or columns present in `mvdf(x)`.
+#' 
+#' @param x An object inheriting from `mvdf_obj`
+#' 
+#' #' @return An integer of length 1 or NULL.
+#' 
+#' @rdname nrowncol
+#' @exportMethod nrow
+methods::setMethod(
+  "nrow",
+  "mvdf_obj",
+  function(x) nrow(mvdf(x))
+)
+
+#' @rdname nrowncol
+#' @exportMethod ncol
+methods::setMethod(
+  "ncol",
+  "mvdf_obj",
+  function(x) ncol(mvdf(x))
+)

@@ -28,6 +28,19 @@ setValidity("mvdf_simple_material", function(object) {
     error[n_issue] <- "All slots must be the same length."
     n_issue <- n_issue + 1
   }
+  
+  miss_slots <- vapply(
+    list(object@diffuse_color, object@metallic, object@roughness),
+    any_missing,
+    numeric(1)
+    )
+  names(miss_slots) <- c("diffuse_color", "metallic", "roughness")
+  miss_slots <- miss_slots[miss_slots]
+  if (!is.null(miss_slots)) {
+    error[n_issue] <- paste("Slots cannot have missing values: ",
+                            names(miss_slots))
+    n_issue <- n_issue + 1
+  }
 
   if (n_issue > 1) {
     return(paste0(error, collapse = "\n"))
