@@ -42,11 +42,13 @@ execute_render <- function(script,
   }
 
   argstring <- paste("-b -P", scriptfile)
-  if (length(args) > 0) argstring <- paste(argstring, flags, collapse = " ")
+  flags <- c(flags, extract_flags(scriptfile))
+  if (length(flags) > 0) argstring <- paste(argstring, flags, collapse = " ")
+  addons <- c(addons, extract_addons(scriptfile))
   if (length(addons) > 0) {
     argstring <- paste(argstring,
       "--addons",
-      addons,
+      paste0(addons, collapse = ","),
       collapse = " "
     )
   }
@@ -77,4 +79,16 @@ execute_render <- function(script,
   }
 
   invisible(outfile)
+}
+
+extract_addons <- function(scriptfile) {
+  script <- readLines(scriptfile)
+  script <- grep("# %mvdf:addon", script, value = TRUE)
+  gsub("# %mvdf:addons? ", "", script)
+}
+
+extract_flags <- function(scriptfile) {
+  script <- readLines(scriptfile)
+  script <- grep("# %mvdf:flag", script, value = TRUE)
+  gsub("# %mvdf:flags? ", "", script)
 }
