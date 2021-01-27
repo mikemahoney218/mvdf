@@ -42,9 +42,9 @@ execute_render <- function(script,
   }
 
   argstring <- paste("-b -P", scriptfile)
-  flags <- c(flags, extract_flags(scriptfile))
+  flags <- c(flags, extract_param(scriptfile, "flag"))
   if (length(flags) > 0) argstring <- paste(argstring, flags, collapse = " ")
-  addons <- c(addons, extract_addons(scriptfile))
+  addons <- c(addons, extract_param(scriptfile, "addon"))
   if (length(addons) > 0) {
     argstring <- paste(argstring,
       "--addons",
@@ -81,14 +81,11 @@ execute_render <- function(script,
   invisible(outfile)
 }
 
-extract_addons <- function(scriptfile) {
+extract_param <- function(scriptfile, param) {
+  
+  grepstr <- paste0("# ?%mvdf:", param, "s? ")
   script <- readLines(scriptfile)
-  script <- grep("# %mvdf:addon", script, value = TRUE)
-  gsub("# %mvdf:addons? ", "", script)
-}
+  script <- grep(grepstr, script, value = TRUE)
+  gsub(grepstr, "", script)
 
-extract_flags <- function(scriptfile) {
-  script <- readLines(scriptfile)
-  script <- grep("# %mvdf:flag", script, value = TRUE)
-  gsub("# %mvdf:flags? ", "", script)
 }
