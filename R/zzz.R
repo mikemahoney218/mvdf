@@ -89,7 +89,7 @@ pythonize_booleans <- function(dots) {
 #' @keywords internal
 build_location <- function(object) {
   mvdf_df <- mvdf(object)
-  location <- glue::glue(
+  glue::glue(
     "location=({xloc}, {yloc}, {zloc})",
     xloc = mvdf_df$x,
     yloc = mvdf_df$y,
