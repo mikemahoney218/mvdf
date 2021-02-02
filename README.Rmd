@@ -31,18 +31,6 @@ for the [Blender](https://www.blender.org/) 3D rendering program.
 Please note that this package is in early development; breaking changes can and
 will happen as better approaches become evident. 
 
-
-## Installation
-
-You can install the development version of `mvdf` from GitHub via:
-
-``` r
-remotes::install_github("mikemahoney218/mvdf")
-```
-
-You'll also need to install [Blender](https://www.blender.org/download/) 
-separately.
-
 ## What's an MVDF anyway?
 
 The `mvdf` package proposes a standard approach to using R as a frontend 
@@ -99,3 +87,16 @@ knitr::include_graphics("vignettes/iris_cubes.jpg")
 ```
 
 For more information, check out the [introductory vignette!](https://mikemahoney218.github.io/mvdf/articles/intro-to-mvdf.html)
+
+## Installation
+
+You can install the development version of `mvdf` from GitHub via:
+
+``` r
+remotes::install_github("mikemahoney218/mvdf")
+```
+
+You'll also need to install [Blender](https://www.blender.org/download/) 
+separately. mvdf is tested against the current release of Blender and
+is not guaranteed to work with older versions; in particular, some basic 
+operations may fail with Blender < 2.80.

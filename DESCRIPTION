@@ -57,5 +57,6 @@ Collate:
     'execute_render.R'
     'get_mvdf.R'
     'metadata.R'
+    'mvdf-package.R'
     'show.R'
     'zzz.R'
