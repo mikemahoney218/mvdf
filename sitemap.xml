@@ -61,6 +61,9 @@
     <loc>https://mikemahoney218.github.io/mvdf/reference/get_metadata.html</loc>
   </url>
   <url>
+    <loc>https://mikemahoney218.github.io/mvdf/reference/getmvdf.html</loc>
+  </url>
+  <url>
     <loc>https://mikemahoney218.github.io/mvdf/reference/headtail.html</loc>
   </url>
   <url>
@@ -70,7 +73,7 @@
     <loc>https://mikemahoney218.github.io/mvdf/reference/metadataassign.html</loc>
   </url>
   <url>
-    <loc>https://mikemahoney218.github.io/mvdf/reference/mvdf.html</loc>
+    <loc>https://mikemahoney218.github.io/mvdf/reference/mvdf-package.html</loc>
   </url>
   <url>
     <loc>https://mikemahoney218.github.io/mvdf/reference/mvdf_obj-class.html</loc>
