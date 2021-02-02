@@ -2,8 +2,8 @@
 % Please edit documentation in R/mvdf-package.R
 \docType{package}
 \name{mvdf-package}
-\alias{mvdf}
 \alias{mvdf-package}
+\alias{_PACKAGE}
 \title{mvdf: A Minimum Viable Data Format for 3D Rendering via Blender}
 \description{
 \if{html}{\figure{logo.png}{options: align='right' alt='logo' width='120'}}

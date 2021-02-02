@@ -2,7 +2,7 @@
 #'
 #' @param object The object to retrieve the appendix from.
 #'
-#' @include mvdf.R
+#' @include mvdf_class.R
 #'
 #' @rdname get_appendix
 #'

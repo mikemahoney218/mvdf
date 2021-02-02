@@ -73,7 +73,7 @@ set_mvdf <- function(mvdf,
 #' @param x The object to set the mvdf within.
 #' @param value The data to replace the mvdf with.
 #'
-#' @include mvdf.R
+#' @include mvdf_class.R
 #'
 #' @rdname mvdfassign
 #'
@@ -115,7 +115,7 @@ set_metadata <- function(metadata,
 #' @param x The object to set the metadata within.
 #' @param value The data to replace the metadata with.
 #'
-#' @include mvdf.R
+#' @include mvdf_class.R
 #'
 #' @rdname metadataassign
 #'
@@ -157,7 +157,7 @@ set_appendix <- function(appendix,
 #' @param x The object to set the appendix within.
 #' @param value The data to replace the appendix with.
 #'
-#' @include mvdf.R
+#' @include mvdf_class.R
 #'
 #' @rdname appendixassign
 #'

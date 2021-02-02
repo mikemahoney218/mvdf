@@ -44,7 +44,7 @@ Imports:
 Collate: 
     'add_blender_endmatter.R'
     'add_camera.R'
-    'mvdf.R'
+    'mvdf_class.R'
     'add_empty.R'
     'add_light.R'
     'mvdf_simple_material.R'

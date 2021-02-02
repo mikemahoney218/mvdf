@@ -17,7 +17,7 @@
 #' `x`, `y`, and `z` values in `object`.
 #' @param ... Additional arguments to pass to the empty creation call.
 #'
-#' @include mvdf.R
+#' @include mvdf_class.R
 #'
 #' @return A length 1 character vector containing the Blender Python script with
 #' code for creating mesh primitives added.

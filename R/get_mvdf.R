@@ -2,11 +2,11 @@
 #'
 #' @param object The `mvdf_obj` object to retrieve the mvdf for.
 #'
-#' @name mvdf
+#' @rdname getmvdf
 #'
 #' @export
 setGeneric("mvdf", function(object) standardGeneric("mvdf"))
 
-#' @rdname mvdf
+#' @rdname getmvdf
 #' @exportMethod mvdf
 setMethod("mvdf", "mvdf_obj", function(object) as.data.frame(object))

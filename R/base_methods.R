@@ -11,7 +11,7 @@
 #' indices in that dimension. Must contain at least one non-missing value.
 #' @param ... Ignored.
 #'
-#' @include mvdf.R
+#' @include mvdf_class.R
 #'
 #' @exportMethod head
 methods::setMethod("head", "mvdf_obj", function(x, n = 6L, ...) {
@@ -39,7 +39,7 @@ methods::setMethod("tail", "mvdf_obj", function(x, n = 6L, ...) {
 #' @param x An object inheriting from `mvdf`.
 #' @param row.names,optional,... Arguments passed to [base::as.data.frame].
 #'
-#' @include mvdf.R
+#' @include mvdf_class.R
 #'
 #' @exportMethod as.data.frame
 methods::setMethod("as.data.frame", "mvdf_obj", function(x,
@@ -76,7 +76,7 @@ methods::setMethod(
 #' 
 #' @param x An object inheriting from `mvdf_obj`
 #' 
-#' #' @return An integer of length 1 or NULL.
+#' @return An integer of length 1 or NULL.
 #' 
 #' @rdname nrowncol
 #' @exportMethod nrow

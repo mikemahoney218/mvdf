@@ -6,7 +6,7 @@
 #'
 #' @return `show` returns an invisible `NULL`.
 #'
-#' @include mvdf.R
+#' @include mvdf_class.R
 #'
 #' @exportMethod show
 methods::setMethod("show", "mvdf_obj", function(object) {

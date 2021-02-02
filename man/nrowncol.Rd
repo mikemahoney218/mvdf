@@ -10,9 +10,10 @@
 \S4method{ncol}{mvdf_obj}(x)
 }
 \arguments{
-\item{x}{An object inheriting from `mvdf_obj`
-
-#' @return An integer of length 1 or NULL.}
+\item{x}{An object inheriting from `mvdf_obj`}
+}
+\value{
+An integer of length 1 or NULL.
 }
 \description{
 `nrow` and `ncol` return the number of rows or columns present in `mvdf(x)`.
