@@ -121,7 +121,8 @@ eval_arg <- function(data, arg) {
 #' Standard way to replace & replicate values for class-creation functions
 #'
 #' @param vec The vector to replace and replicate values throughout
-#' @param length_out The target length of the vector
+#' @param length_out The target length of the vector, used to repeat length 1 
+#' vectors and ignored in all other cases.
 #' @param replace_val The value to replace missing values with
 #'
 #' @return A vector of length `length_out` with missing values replaced by

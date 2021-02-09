@@ -9,7 +9,7 @@ mvdf_simple_material(
   diffuse_color = "diffuse_color",
   metallic = "metallic",
   roughness = "roughness",
-  translate_colors = FALSE,
+  translate_colors = NULL,
   ...
 )
 }
@@ -23,7 +23,9 @@ values for each slot.}
 \item{diffuse_color}{Diffuse color of the material, in either a RGBA array
 (if `translate_colors` is `TRUE`) or in any of the formats
 understood by [grDevices::col2rgb] (if `translate_colors` is `FALSE`).
-If missing, set to gray80.}
+If colors are missing, they are set to gray80. If `translate_colors` is 
+`NULL`, the default, this function attempts to infer if values are already
+RGBA arrays.}
 
 \item{metallic}{Amount of mirror reflection for raytrace, as a float from
 0-1. If missing, set to 0.}

@@ -58,7 +58,9 @@ setValidity("mvdf_simple_material", function(object) {
 #' @param diffuse_color Diffuse color of the material, in either a RGBA array
 #' (if `translate_colors` is `TRUE`) or in any of the formats
 #' understood by [grDevices::col2rgb] (if `translate_colors` is `FALSE`).
-#' If missing, set to gray80.
+#' If colors are missing, they are set to gray80. If `translate_colors` is 
+#' `NULL`, the default, this function attempts to infer if values are already
+#' RGBA arrays.
 #' @param metallic Amount of mirror reflection for raytrace, as a float from
 #' 0-1. If missing, set to 0.
 #' @param roughness Roughness of the material, as a float from 0-1. If missing,
@@ -72,7 +74,7 @@ mvdf_simple_material <- function(data = NULL,
                                  diffuse_color = "diffuse_color",
                                  metallic = "metallic",
                                  roughness = "roughness",
-                                 translate_colors = FALSE,
+                                 translate_colors = NULL,
                                  ...) {
   res <- mvdf_obj(data = data, ...)
   res_mvdf <- mvdf(res)
@@ -84,6 +86,11 @@ mvdf_simple_material <- function(data = NULL,
   }
 
   length_out <- length(res_mvdf$idx)
+  
+  if (is.null(translate_colors)) {
+    translate_colors <- all_missing(diffuse_color[[1]]) || 
+      !grepl("\\d,", diffuse_color[[1]])
+  }
 
   diffuse_color <- calc_val(
     diffuse_color,
