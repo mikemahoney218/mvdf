@@ -148,7 +148,7 @@
   diffuse_color <span class='op'>=</span> <span class='st'>"diffuse_color"</span>,
   metallic <span class='op'>=</span> <span class='st'>"metallic"</span>,
   roughness <span class='op'>=</span> <span class='st'>"roughness"</span>,
-  translate_colors <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  translate_colors <span class='op'>=</span> <span class='cn'>NULL</span>,
   <span class='va'>...</span>
 <span class='op'>)</span></pre>
 
@@ -168,7 +168,9 @@ values for each slot.</p></td>
       <td><p>Diffuse color of the material, in either a RGBA array
 (if `translate_colors` is `TRUE`) or in any of the formats
 understood by [grDevices::col2rgb] (if `translate_colors` is `FALSE`).
-If missing, set to gray80.</p></td>
+If colors are missing, they are set to gray80. If `translate_colors` is 
+`NULL`, the default, this function attempts to infer if values are already
+RGBA arrays.</p></td>
     </tr>
     <tr>
       <th>metallic</th>
