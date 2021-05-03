@@ -26,6 +26,8 @@
 <![endif]-->
 </head>
 <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-article">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -43,7 +45,26 @@
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
-      <ul class="nav navbar-nav"></ul>
+      <ul class="nav navbar-nav">
+<li>
+  <a href="../reference/index.html">Reference</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Vignettes
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+<li>
+      <a href="../articles/intro-to-mvdf.html">Introduction to mvdf</a>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="../news/index.html">News</a>
+</li>
+      </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
   <a href="../index.html">
@@ -70,7 +91,7 @@
   <a href="../news/index.html">News</a>
 </li>
 <li>
-  <a href="https://github.com/mikemahoney218/mvdf">
+  <a href="https://github.com/mikemahoney218/mvdf" class="external-link">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
@@ -91,17 +112,43 @@
       <h1 data-toc-skip>mvdf for Developers</h1>
             
       
-      <small class="dont-index">Source: <a href="https://github.com/mikemahoney218/mvdf/blob/master/vignettes/dev-guide.Rmd"><code>vignettes/dev-guide.Rmd</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/mikemahoney218/mvdf/blob/master/vignettes/dev-guide.Rmd" class="external-link"><code>vignettes/dev-guide.Rmd</code></a></small>
       <div class="hidden name"><code>dev-guide.Rmd</code></div>
 
     </div>
 
     
     
+<div id="extending-mvdf" class="section level2">
+<h2 class="hasAnchor">
+<a href="#extending-mvdf" class="anchor" aria-hidden="true"></a>Extending <code>mvdf</code>
+</h2>
+<p>While <code>mvdf</code> may be used by itself to generate simple data-defined renders, the main goal of this package is to make it easy to build more complex rendering methods that take advantage of the same set of building blocks to provide a relatively unified and cohesive user interface. To do so, <code>mvdf</code> aims to provide a translation layer between data frames and exporter functions, which let the user</p>
+<ul>
+<li>Importer functions convert user data into strictly-defined S4 objects</li>
+<li>Manipulation functions make it easy to adjust S4 objects as needed</li>
+<li>Exporter functions convert S4 objects into renders</li>
+</ul>
+</div>
+<div id="creating-new-classes" class="section level2">
+<h2 class="hasAnchor">
+<a href="#creating-new-classes" class="anchor" aria-hidden="true"></a>Creating New Classes</h2>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://mikemahoney218.github.io/mvdf/">mvdf</a></span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://mikemahoney218.github.io/mvdf/">mvdf</a></span><span class="op">)</span></code></pre></div>
+</div>
+<div id="adding-exporters" class="section level2">
+<h2 class="hasAnchor">
+<a href="#adding-exporters" class="anchor" aria-hidden="true"></a>Adding Exporters</h2>
+</div>
+<div id="manipulation-functions" class="section level2">
+<h2 class="hasAnchor">
+<a href="#manipulation-functions" class="anchor" aria-hidden="true"></a>Manipulation Functions</h2>
+</div>
+<div id="reuse-definitions" class="section level2">
+<h2 class="hasAnchor">
+<a href="#reuse-definitions" class="anchor" aria-hidden="true"></a>Reuse Definitions</h2>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span>
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org" class="external-link">dplyr</a></span><span class="op">)</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; Attaching package: 'dplyr'</span>
 <span class="co">#&gt; The following objects are masked from 'package:stats':</span>
@@ -110,42 +157,47 @@
 <span class="co">#&gt; The following objects are masked from 'package:base':</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt;     intersect, setdiff, setequal, union</span>
-<span class="fu"><a href="https://tibble.tidyverse.org/reference/tribble.html">tribble</a></span><span class="op">(</span>
-  <span class="op">~</span> <span class="va">Slot</span>, <span class="op">~</span> <span class="va">Class</span>, <span class="op">~</span> <span class="va">Package</span>, <span class="op">~</span> <span class="va">Description</span>, <span class="op">~</span> <span class="va">Units</span>, <span class="op">~</span> <span class="va">Class</span>, <span class="op">~</span> <span class="va">Unique</span>, <span class="op">~</span> <span class="va">Not_missing</span>,
-  <span class="st">"x"</span>, <span class="st">"mvdf_obj"</span>, <span class="st">"mvdf"</span>, <span class="st">'Distance of the origin of the object from the origin of the grid system (the central point at 0, 0, 0) in meters in the x direction. Coordinates are assumed to be on a right-handed coordinate system with Z oriented as the natural "vertical" direction.'</span>, <span class="st">"meters"</span>, <span class="st">"Numeric"</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>,
-  <span class="st">"y"</span>, <span class="st">"mvdf_obj"</span>, <span class="st">"mvdf"</span>, <span class="st">'Distance of the origin of the object from the origin of the grid system (the central point at 0, 0, 0) in meters in the y direction. Coordinates are assumed to be on a right-handed coordinate system with Z oriented as the natural "vertical" direction.'</span>, <span class="st">"meters"</span>, <span class="st">"Numeric"</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>,
-  <span class="st">"z"</span>, <span class="st">"mvdf_obj"</span>, <span class="st">"mvdf"</span>, <span class="st">'Distance of the origin of the object from the origin of the grid system (the central point at 0, 0, 0) in meters in the z direction. Coordinates are assumed to be on a right-handed coordinate system with Z oriented as the natural "vertical" direction.'</span>, <span class="st">"meters"</span>, <span class="st">"Numeric"</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>,
-  <span class="st">"idx"</span>, <span class="st">"mvdf_obj"</span>, <span class="st">"mvdf"</span>, <span class="st">'A unique identifier (or "index") for each object to be modeled.'</span>, <span class="cn">NA</span>, <span class="st">"Character"</span>, <span class="cn">TRUE</span>, <span class="cn">TRUE</span>,
-  <span class="st">"diffuse_color"</span>, <span class="st">"mvdf_simple_material"</span>, <span class="st">"mvdf"</span>, <span class="st">"Diffuse color of the material, as an RGBA array of floats scaled from 0-1."</span>, <span class="st">"Character"</span>, <span class="cn">NA</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>,
-  <span class="st">"metallic"</span>, <span class="st">"mvdf_simple_material"</span>, <span class="st">"mvdf"</span>, <span class="st">"Amount of mirror reflection for raytrace, as a float from 0-1"</span>, <span class="st">"Numeric"</span>, <span class="st">"Proportion"</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>,
-  <span class="st">"roughness"</span>, <span class="st">"mvdf_simple_material"</span>, <span class="st">"mvdf"</span>, <span class="st">"Roughness of the material, as a float from 0-1."</span>, <span class="st">"Numeric"</span>, <span class="st">"Proportion"</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>
+<span class="fu"><a href="https://tibble.tidyverse.org/reference/tribble.html" class="external-link">tribble</a></span><span class="op">(</span>
+  <span class="op">~</span> <span class="va">Slot</span>, <span class="op">~</span> <span class="va">Class</span>, <span class="op">~</span> <span class="va">Package</span>, <span class="op">~</span> <span class="va">Description</span>, <span class="op">~</span> <span class="va">Units</span>, <span class="op">~</span> <span class="va">Class</span>, <span class="op">~</span> <span class="va">Unique</span>, <span class="op">~</span> <span class="va">Must_Provide</span>, <span class="op">~</span> <span class="va">Default</span>,
+  <span class="st">"x"</span>, <span class="st">"mvdf_obj"</span>, <span class="st">"mvdf"</span>, <span class="st">'Distance of the origin of the object from the origin of the grid system (the central point at 0, 0, 0) in meters in the x direction. Coordinates are assumed to be on a right-handed coordinate system with Z oriented as the natural "vertical" direction.'</span>, <span class="st">"meters"</span>, <span class="st">"Numeric"</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">NA</span>,
+  <span class="st">"y"</span>, <span class="st">"mvdf_obj"</span>, <span class="st">"mvdf"</span>, <span class="st">'Distance of the origin of the object from the origin of the grid system (the central point at 0, 0, 0) in meters in the y direction. Coordinates are assumed to be on a right-handed coordinate system with Z oriented as the natural "vertical" direction.'</span>, <span class="st">"meters"</span>, <span class="st">"Numeric"</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">NA</span>,
+  <span class="st">"z"</span>, <span class="st">"mvdf_obj"</span>, <span class="st">"mvdf"</span>, <span class="st">'Distance of the origin of the object from the origin of the grid system (the central point at 0, 0, 0) in meters in the z direction. Coordinates are assumed to be on a right-handed coordinate system with Z oriented as the natural "vertical" direction.'</span>, <span class="st">"meters"</span>, <span class="st">"Numeric"</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">NA</span>,
+  <span class="st">"idx"</span>, <span class="st">"mvdf_obj"</span>, <span class="st">"mvdf"</span>, <span class="st">'A unique identifier (or "index") for each object to be modeled.'</span>, <span class="cn">NA</span>, <span class="st">"Character"</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="st">"Sequential index"</span>,
+  <span class="st">"diffuse_color"</span>, <span class="st">"mvdf_simple_material"</span>, <span class="st">"mvdf"</span>, <span class="st">"Diffuse color of the material, as an RGBA array of floats scaled from 0-1."</span>, <span class="cn">NA</span>, <span class="st">"Character"</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>, <span class="st">"0.8,0.8,0.8,0.8"</span>,
+  <span class="st">"metallic"</span>, <span class="st">"mvdf_simple_material"</span>, <span class="st">"mvdf"</span>, <span class="st">"Amount of mirror reflection for raytrace, as a float from 0-1"</span>, <span class="st">"Numeric"</span>, <span class="st">"Proportion"</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>, <span class="st">"0"</span>,
+  <span class="st">"roughness"</span>, <span class="st">"mvdf_simple_material"</span>, <span class="st">"mvdf"</span>, <span class="st">"Roughness of the material, as a float from 0-1."</span>, <span class="st">"Numeric"</span>, <span class="st">"Proportion"</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>, <span class="st">"0"</span>
 <span class="op">)</span>
-<span class="co">#&gt; # A tibble: 7 x 8</span>
-<span class="co">#&gt;   Slot    Class    Package Description            Units Class Unique Not_missing</span>
-<span class="co">#&gt;   &lt;chr&gt;   &lt;chr&gt;    &lt;chr&gt;   &lt;chr&gt;                  &lt;chr&gt; &lt;chr&gt; &lt;lgl&gt;  &lt;lgl&gt;      </span>
-<span class="co">#&gt; 1 x       mvdf_obj mvdf    "Distance of the orig… mete… Nume… FALSE  TRUE       </span>
-<span class="co">#&gt; 2 y       mvdf_obj mvdf    "Distance of the orig… mete… Nume… FALSE  TRUE       </span>
-<span class="co">#&gt; 3 z       mvdf_obj mvdf    "Distance of the orig… mete… Nume… FALSE  TRUE       </span>
-<span class="co">#&gt; 4 idx     mvdf_obj mvdf    "A unique identifier … &lt;NA&gt;  Char… TRUE   TRUE       </span>
-<span class="co">#&gt; 5 diffus… mvdf_si… mvdf    "Diffuse color of the… Char… &lt;NA&gt;  FALSE  FALSE      </span>
-<span class="co">#&gt; 6 metall… mvdf_si… mvdf    "Amount of mirror ref… Nume… Prop… FALSE  FALSE      </span>
-<span class="co">#&gt; 7 roughn… mvdf_si… mvdf    "Roughness of the mat… Nume… Prop… FALSE  FALSE</span></code></pre></div>
+<span class="co">#&gt; # A tibble: 7 x 9</span>
+<span class="co">#&gt;   Slot   Class  Package Description      Units Class Unique Must_Provide Default</span>
+<span class="co">#&gt;   &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt;   &lt;chr&gt;            &lt;chr&gt; &lt;chr&gt; &lt;lgl&gt;  &lt;lgl&gt;        &lt;chr&gt;  </span>
+<span class="co">#&gt; 1 x      mvdf_… mvdf    "Distance of th… mete… Nume… FALSE  TRUE         &lt;NA&gt;   </span>
+<span class="co">#&gt; 2 y      mvdf_… mvdf    "Distance of th… mete… Nume… FALSE  TRUE         &lt;NA&gt;   </span>
+<span class="co">#&gt; 3 z      mvdf_… mvdf    "Distance of th… mete… Nume… FALSE  TRUE         &lt;NA&gt;   </span>
+<span class="co">#&gt; 4 idx    mvdf_… mvdf    "A unique ident… &lt;NA&gt;  Char… TRUE   FALSE        Sequen…</span>
+<span class="co">#&gt; 5 diffu… mvdf_… mvdf    "Diffuse color … &lt;NA&gt;  Char… FALSE  FALSE        0.8,0.…</span>
+<span class="co">#&gt; 6 metal… mvdf_… mvdf    "Amount of mirr… Nume… Prop… FALSE  FALSE        0      </span>
+<span class="co">#&gt; 7 rough… mvdf_… mvdf    "Roughness of t… Nume… Prop… FALSE  FALSE        0</span></code></pre></div>
+</div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
 
-      </div>
+        <nav id="toc" data-toggle="toc"><h2 data-toc-skip>Contents</h2>
+    </nav>
+</div>
 
 </div>
 
 
 
       <footer><div class="copyright">
-  <p>Developed by Michael Mahoney.</p>
+  <p></p>
+<p>Developed by Michael Mahoney.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.9000.</p>
+  <p></p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link external-link">pkgdown</a> 1.6.1.9001.</p>
 </div>
 
       </footer>
@@ -153,6 +205,8 @@
 
   
 
+
+  
 
   </body>
 </html>

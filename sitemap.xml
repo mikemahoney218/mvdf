@@ -1,7 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://mikemahoney218.github.io/mvdf/404.html</loc>
+  </url>
+  <url>
+    <loc>https://mikemahoney218.github.io/mvdf/CONTRIBUTING.html</loc>
+  </url>
+  <url>
+    <loc>https://mikemahoney218.github.io/mvdf/LICENSE-text.html</loc>
+  </url>
+  <url>
+    <loc>https://mikemahoney218.github.io/mvdf/LICENSE.html</loc>
+  </url>
+  <url>
+    <loc>https://mikemahoney218.github.io/mvdf/articles/dev-guide.html</loc>
+  </url>
+  <url>
+    <loc>https://mikemahoney218.github.io/mvdf/articles/index.html</loc>
+  </url>
+  <url>
+    <loc>https://mikemahoney218.github.io/mvdf/articles/intro-to-mvdf.html</loc>
+  </url>
+  <url>
+    <loc>https://mikemahoney218.github.io/mvdf/authors.html</loc>
+  </url>
+  <url>
     <loc>https://mikemahoney218.github.io/mvdf/index.html</loc>
+  </url>
+  <url>
+    <loc>https://mikemahoney218.github.io/mvdf/issue_template.html</loc>
+  </url>
+  <url>
+    <loc>https://mikemahoney218.github.io/mvdf/news/index.html</loc>
+  </url>
+  <url>
+    <loc>https://mikemahoney218.github.io/mvdf/pull_request_template.html</loc>
   </url>
   <url>
     <loc>https://mikemahoney218.github.io/mvdf/reference/add_blender_endmatter.html</loc>
@@ -67,6 +100,9 @@
     <loc>https://mikemahoney218.github.io/mvdf/reference/headtail.html</loc>
   </url>
   <url>
+    <loc>https://mikemahoney218.github.io/mvdf/reference/index.html</loc>
+  </url>
+  <url>
     <loc>https://mikemahoney218.github.io/mvdf/reference/is_missing.html</loc>
   </url>
   <url>
@@ -104,11 +140,5 @@
   </url>
   <url>
     <loc>https://mikemahoney218.github.io/mvdf/reference/show-mvdf_obj-method.html</loc>
-  </url>
-  <url>
-    <loc>https://mikemahoney218.github.io/mvdf/articles/dev-guide.html</loc>
-  </url>
-  <url>
-    <loc>https://mikemahoney218.github.io/mvdf/articles/intro-to-mvdf.html</loc>
   </url>
 </urlset>

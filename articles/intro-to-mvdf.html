@@ -26,6 +26,8 @@
 <![endif]-->
 </head>
 <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-article">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -43,7 +45,26 @@
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
-      <ul class="nav navbar-nav"></ul>
+      <ul class="nav navbar-nav">
+<li>
+  <a href="../reference/index.html">Reference</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Vignettes
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+<li>
+      <a href="../articles/intro-to-mvdf.html">Introduction to mvdf</a>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="../news/index.html">News</a>
+</li>
+      </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
   <a href="../index.html">
@@ -70,7 +91,7 @@
   <a href="../news/index.html">News</a>
 </li>
 <li>
-  <a href="https://github.com/mikemahoney218/mvdf">
+  <a href="https://github.com/mikemahoney218/mvdf" class="external-link">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
@@ -91,7 +112,7 @@
       <h1 data-toc-skip>Introduction to mvdf</h1>
             
       
-      <small class="dont-index">Source: <a href="https://github.com/mikemahoney218/mvdf/blob/master/vignettes/intro-to-mvdf.Rmd"><code>vignettes/intro-to-mvdf.Rmd</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/mikemahoney218/mvdf/blob/master/vignettes/intro-to-mvdf.Rmd" class="external-link"><code>vignettes/intro-to-mvdf.Rmd</code></a></small>
       <div class="hidden name"><code>intro-to-mvdf.Rmd</code></div>
 
     </div>
@@ -100,24 +121,24 @@
     
 <div id="a-minimal-viable-data-format-for-using-r-as-a-frontend-for-blender" class="section level2">
 <h2 class="hasAnchor">
-<a href="#a-minimal-viable-data-format-for-using-r-as-a-frontend-for-blender" class="anchor"></a>A Minimal Viable Data Format for Using R as a Frontend for Blender</h2>
-<p>The history of 3D graphics in R is almost as long as the history of R itself, spanning from <a href="https://cran.r-project.org/package=lattice">lattice graphics</a> (which gained 3D visualizations sometime around 2001-2002) to <a href="https://cran.r-project.org/package=rgl">rgl</a> (whose oldest source on CRAN dates back to 2004) to newer implementations such as <a href="https://github.com/hypertidy/anglr">anglr</a>, <a href="https://github.com/coolbutuseless/ggrgl">ggrgl</a>, and <a href="https://www.rayshader.com/">rayshader</a>/<a href="http://www.rayrender.net/">rayrender</a>. Each of these fantastic packages can be used to produce beautiful 3D visualizations from data, with the processing and rendering happening right inside your R session.</p>
-<p><code>mvdf</code> is a little bit different. Rather than visualize your data itself, <code>mvdf</code> outsources the work, helping you use R as a frontend for the <a href="https://www.blender.org/">Blender 3D rendering engine</a>, translating data between analysis and visualization steps. As <a href="https://www.tylermw.com/3d-ggplots-with-rayshader/">the rayshader documentation says</a>, learning about programming, data science, and data visualization is hard enough: we don’t need to add Blender to the list. <code>mvdf</code> aims to help you build all sorts of visualizations from almost any input data with the same set of generic tools, without needing to get into the weeds of 3D rendering technology.</p>
-<p>While <code>mvdf</code> is a relatively low-level package designed for developers (and check out the <code>mvdf for Developers</code> vignette for more information on that), this guide walks through the basic steps of getting from data to visualization, with pointers to documentation on how to make more complex renders. Note that all of our examples from here on out expect that you’ve already installed Blender (<a href="https://www.blender.org/download/">version 2.80 or up</a>) and mvdf (via <code>remotes::install.github("mikemahoney218/mvdf")</code>).</p>
+<a href="#a-minimal-viable-data-format-for-using-r-as-a-frontend-for-blender" class="anchor" aria-hidden="true"></a>A Minimal Viable Data Format for Using R as a Frontend for Blender</h2>
+<p>The history of 3D graphics in R is almost as long as the history of R itself, spanning from <a href="https://cran.r-project.org/package=lattice" class="external-link">lattice graphics</a> (which gained 3D visualizations sometime around 2001-2002) to <a href="https://cran.r-project.org/package=rgl" class="external-link">rgl</a> (whose oldest source on CRAN dates back to 2004) to newer implementations such as <a href="https://github.com/hypertidy/anglr" class="external-link">anglr</a>, <a href="https://github.com/coolbutuseless/ggrgl" class="external-link">ggrgl</a>, and <a href="https://www.rayshader.com/" class="external-link">rayshader</a>/<a href="http://www.rayrender.net/" class="external-link">rayrender</a>. Each of these fantastic packages can be used to produce beautiful 3D visualizations from data, with the processing and rendering happening right inside your R session.</p>
+<p><code>mvdf</code> is a little bit different. Rather than visualize your data itself, <code>mvdf</code> outsources the work, helping you use R as a frontend for the <a href="https://www.blender.org/" class="external-link">Blender 3D rendering engine</a>, translating data between analysis and visualization steps. As <a href="https://www.tylermw.com/3d-ggplots-with-rayshader/" class="external-link">the rayshader documentation says</a>, learning about programming, data science, and data visualization is hard enough: we don’t need to add Blender to the list. <code>mvdf</code> aims to help you build all sorts of visualizations from almost any input data with the same set of generic tools, without needing to get into the weeds of 3D rendering technology.</p>
+<p>While <code>mvdf</code> is a relatively low-level package designed for developers (and check out the <code>mvdf for Developers</code> vignette for more information on that), this guide walks through the basic steps of getting from data to visualization, with pointers to documentation on how to make more complex renders. Note that all of our examples from here on out expect that you’ve already installed Blender (<a href="https://www.blender.org/download/" class="external-link">version 2.80 or up</a>) and mvdf (via <code>remotes::install.github("mikemahoney218/mvdf")</code>).</p>
 </div>
 <div id="so-whats-an-mvdf-anyway" class="section level2">
 <h2 class="hasAnchor">
-<a href="#so-whats-an-mvdf-anyway" class="anchor"></a>So What’s an <code>mvdf</code> Anyway?</h2>
+<a href="#so-whats-an-mvdf-anyway" class="anchor" aria-hidden="true"></a>So What’s an <code>mvdf</code> Anyway?</h2>
 <p>A <code>mvdf</code> is a <em>minimum viable data format</em> for 3D rendering – that is, it’s a data frame that contains <em>at least</em> the bare minimum amount of information required to produce a render. For the simplest renders, that generally means having x, y, and z coordinates, as well as a unique identifier, for each object to be drawn. We’ll call any object that contains at least that <code>mvdf</code> an “<code>mvdf</code> object” from here on out, and we can create one using <code>mvdf_obj</code>:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://mikemahoney218.github.io/mvdf/">mvdf</a></span><span class="op">)</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span><span class="op">)</span> <span class="co"># For demonstration purposes only -- not required by mvdf!</span>
-<span class="va">iris</span> <span class="op">%&gt;%</span> 
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://mikemahoney218.github.io/mvdf/">mvdf</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org" class="external-link">dplyr</a></span><span class="op">)</span> <span class="co"># For demonstration purposes only -- not required by mvdf!</span>
+<span class="va">iris</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> 
   <span class="fu"><a href="../reference/mvdf_obj.html">mvdf_obj</a></span><span class="op">(</span>
     x <span class="op">=</span> <span class="st">"Sepal.Length"</span>,
     y <span class="op">=</span> <span class="st">"Sepal.Width"</span>,
-    z <span class="op">=</span> <span class="st">"Petal.Length"</span><span class="op">)</span> <span class="op">%&gt;%</span> 
-  <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="op">)</span>
+    z <span class="op">=</span> <span class="st">"Petal.Length"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> 
+  <span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="op">)</span>
 <span class="co">#&gt;     x   y   z idx</span>
 <span class="co">#&gt; 1 5.1 3.5 1.4   1</span>
 <span class="co">#&gt; 2 4.9 3.0 1.4   2</span>
@@ -127,14 +148,14 @@
 <span class="co">#&gt; 6 5.4 3.9 1.7   6</span></code></pre></div>
 <p>As you can see, our <code>mvdf_obj</code> only contains that minimal set of data needed to make a 3D visualization (plus an index column that’s been calculated for us). If we don’t want to lose the other fields in our data frame, we can include any tabular data we want in the special <code>metadata</code> field of <code>mvdf_obj</code>:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">iris_mvdf</span> <span class="op">&lt;-</span> <span class="va">iris</span> <span class="op">%&gt;%</span> 
+<code class="sourceCode R"><span class="va">iris_mvdf</span> <span class="op">&lt;-</span> <span class="va">iris</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> 
   <span class="fu"><a href="../reference/mvdf_obj.html">mvdf_obj</a></span><span class="op">(</span>
     x <span class="op">=</span> <span class="st">"Sepal.Length"</span>,
     y <span class="op">=</span> <span class="st">"Sepal.Width"</span>,
     z <span class="op">=</span> <span class="st">"Petal.Length"</span>,
     metadata <span class="op">=</span> <span class="va">iris</span><span class="op">)</span>
 
-<span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">iris_mvdf</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">iris_mvdf</span><span class="op">)</span>
 <span class="co">#&gt;     x   y   z idx</span>
 <span class="co">#&gt; 1 5.1 3.5 1.4   1</span>
 <span class="co">#&gt; 2 4.9 3.0 1.4   2</span>
@@ -151,15 +172,15 @@
 <span class="co">#&gt; 6          5.4         3.9          1.7         0.4  setosa   6</span></code></pre></div>
 <p>We can also store non-tabular data in the <code>appendix</code> slot of <code>mvdf_obj</code>, letting us preserve all our data in a single object. By working with the “getter” and “setter” methods provided by the package, we can manipulate these fields just like we would any other data frame:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">iris_mvdf</span> <span class="op">%&gt;%</span> 
-  <span class="fu"><a href="../reference/mvdf.html">mvdf</a></span><span class="op">(</span><span class="op">)</span> <span class="op">%&gt;%</span> <span class="co"># Retrieve the mvdf from iris_mvdf</span>
-  <span class="fu"><a href="https://rdrr.io/r/base/merge.html">merge</a></span><span class="op">(</span>
-    <span class="fu"><a href="../reference/metadata.html">metadata</a></span><span class="op">(</span><span class="va">iris_mvdf</span><span class="op">)</span>, <span class="co"># Getter methods also exist for metadata and appendix</span>
+<code class="sourceCode R"><span class="va">iris_mvdf</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> 
+  <span class="fu"><a href="../reference/getmvdf.html">mvdf</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> <span class="co"># Retrieve the mvdf from iris_mvdf</span>
+  <span class="fu"><a href="https://rdrr.io/r/base/merge.html" class="external-link">merge</a></span><span class="op">(</span>
+    <span class="fu"><a href="../reference/get_metadata.html">metadata</a></span><span class="op">(</span><span class="va">iris_mvdf</span><span class="op">)</span>, <span class="co"># Getter methods also exist for metadata and appendix</span>
     by <span class="op">=</span> <span class="st">"idx"</span>
-    <span class="op">)</span> <span class="op">%&gt;%</span> 
-  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html">ifelse</a></span><span class="op">(</span><span class="va">Species</span> <span class="op">==</span> <span class="st">"setosa"</span>, <span class="fl">0</span>, <span class="va">x</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span> 
-  <span class="fu"><a href="../reference/setvalues.html">set_mvdf</a></span><span class="op">(</span><span class="va">iris_mvdf</span><span class="op">)</span> <span class="op">%&gt;%</span> <span class="co"># Setters set_metadata and set_appendix also exist</span>
-  <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="op">)</span>
+    <span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> 
+  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/ifelse.html" class="external-link">ifelse</a></span><span class="op">(</span><span class="va">Species</span> <span class="op">==</span> <span class="st">"setosa"</span>, <span class="fl">0</span>, <span class="va">x</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> 
+  <span class="fu"><a href="../reference/setvalues.html">set_mvdf</a></span><span class="op">(</span><span class="va">iris_mvdf</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> <span class="co"># Setters set_metadata and set_appendix also exist</span>
+  <span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="op">)</span>
 <span class="co">#&gt;     x   y   z idx</span>
 <span class="co">#&gt; 1 0.0 3.5 1.4   1</span>
 <span class="co">#&gt; 2 0.0 3.1 1.5  10</span>
@@ -182,34 +203,34 @@ be on a right-handed coordinate system with Z oriented as the natural
 "vertical" direction.</code></pre>
 <p>All <code>mvdf</code> objects that have these fields (which, in this case, is all of them) agree to this same definition. When possible, definitions are checked automatically when creating an <code>mvdf</code>:</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/try.html">try</a></span><span class="op">(</span><span class="fu"><a href="../reference/mvdf_obj.html">mvdf_obj</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fl">1</span>, y <span class="op">=</span> <span class="fl">1</span>, z <span class="op">=</span> <span class="cn">NA</span><span class="op">)</span><span class="op">)</span>
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu"><a href="../reference/mvdf_obj.html">mvdf_obj</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fl">1</span>, y <span class="op">=</span> <span class="fl">1</span>, z <span class="op">=</span> <span class="cn">NA</span><span class="op">)</span><span class="op">)</span>
 <span class="co">#&gt; Error in validObject(.Object) : </span>
 <span class="co">#&gt;   invalid class "mvdf_obj" object: @z must not have any missing values.</span></code></pre></div>
 <p>And when updating <code>mvdf</code> values:</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">temp_mvdf</span> <span class="op">&lt;-</span> <span class="va">iris_mvdf</span> <span class="op">%&gt;%</span> 
-  <span class="fu"><a href="../reference/mvdf.html">mvdf</a></span><span class="op">(</span><span class="op">)</span> <span class="op">%&gt;%</span> 
-  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>x <span class="op">=</span> <span class="cn">NA</span><span class="op">)</span>
+<code class="sourceCode R"><span class="va">temp_mvdf</span> <span class="op">&lt;-</span> <span class="va">iris_mvdf</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> 
+  <span class="fu"><a href="../reference/getmvdf.html">mvdf</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> 
+  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate</a></span><span class="op">(</span>x <span class="op">=</span> <span class="cn">NA</span><span class="op">)</span>
 
 <span class="co"># This is the same as set_mvdf(temp_mvdf, iris_mvdf)</span>
-<span class="kw"><a href="https://rdrr.io/r/base/try.html">try</a></span><span class="op">(</span><span class="fu"><a href="../reference/mvdf.html">mvdf</a></span><span class="op">(</span><span class="va">iris_mvdf</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="va">temp_mvdf</span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/try.html" class="external-link">try</a></span><span class="op">(</span><span class="fu"><a href="../reference/getmvdf.html">mvdf</a></span><span class="op">(</span><span class="va">iris_mvdf</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="va">temp_mvdf</span><span class="op">)</span>
 <span class="co">#&gt; Error in mvdf_obj(data = structure(list(x = c(NA, NA, NA, NA, NA, NA,  : </span>
 <span class="co">#&gt;   x may not contain any missing values.</span></code></pre></div>
 <p>Not all definitions can be automatically checked (for instance, there’s no real way to tell if your data is oriented correctly or stored in meters). In those cases, <code>mvdf</code> objects (and rendering methods) expect the inputs to be correct without any validation.</p>
 </div>
 <div id="making-simple-renders" class="section level2">
 <h2 class="hasAnchor">
-<a href="#making-simple-renders" class="anchor"></a>Making Simple Renders</h2>
+<a href="#making-simple-renders" class="anchor" aria-hidden="true"></a>Making Simple Renders</h2>
 <p>The advantage of this contract is that we can then make renders super easily. <code>mvdf</code> provides functions to let you interactively build Python scripts which can then be executed in Blender to produce renders.</p>
 <p>The absolute simplest rendering pipeline looks something like this:</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">render_script</span> <span class="op">&lt;-</span> 
   <span class="co"># Delete placeholder objects and import standard Python modules</span>
-  <span class="fu"><a href="../reference/create_blender_frontmatter.html">create_blender_frontmatter</a></span><span class="op">(</span><span class="op">)</span> <span class="op">%&gt;%</span>
+  <span class="fu"><a href="../reference/create_blender_frontmatter.html">create_blender_frontmatter</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span>
   <span class="co"># Add cubes at each point in space in our mvdf</span>
   <span class="fu"><a href="../reference/add_primitive.html">add_mesh_primitive</a></span><span class="op">(</span>object <span class="op">=</span> <span class="va">iris_mvdf</span>,
                      primitive <span class="op">=</span> <span class="st">"cube"</span>,
-                     size <span class="op">=</span> <span class="fl">0.2</span><span class="op">)</span> <span class="op">%&gt;%</span> 
+                     size <span class="op">=</span> <span class="fl">0.2</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> 
   <span class="co"># Save the output to save_render.blend</span>
   <span class="fu"><a href="../reference/add_blender_endmatter.html">add_blender_endmatter</a></span><span class="op">(</span>filepath <span class="op">=</span> <span class="st">"save_render.blend"</span><span class="op">)</span></code></pre></div>
 <p>That pipeline produces a Python script that we could then run inside Blender to produce our render. If we don’t want to boot up Blender, we can also execute the script in the background (which is a good bit more stable for larger renders) using the <code>execute_render</code> function:</p>
@@ -220,16 +241,16 @@ be on a right-handed coordinate system with Z oriented as the natural
 </div>
 <div id="more-complicated-renders" class="section level2">
 <h2 class="hasAnchor">
-<a href="#more-complicated-renders" class="anchor"></a>More Complicated Renders</h2>
+<a href="#more-complicated-renders" class="anchor" aria-hidden="true"></a>More Complicated Renders</h2>
 <p>This is neat, but pretty basic. Luckily, <code>mvdf</code> is built to be a modular system, with more complicated data and rendering methods using almost exactly the same tools as the most basic renders.</p>
 <p>For instance, to color our cubes by species, we need to apply what Blender calls a “material” to each of our objects. To do that, we can create an <code>mvdf_simple_material</code> object instead of an <code>mvdf_obj</code> and pass a color column to <code>diffuse_color</code>:</p>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">iris_material</span> <span class="op">&lt;-</span> <span class="va">iris</span> <span class="op">%&gt;%</span> 
-  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>diffuse_color <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/case_when.html">case_when</a></span><span class="op">(</span>
+<code class="sourceCode R"><span class="va">iris_material</span> <span class="op">&lt;-</span> <span class="va">iris</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> 
+  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate</a></span><span class="op">(</span>diffuse_color <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/case_when.html" class="external-link">case_when</a></span><span class="op">(</span>
     <span class="va">Species</span> <span class="op">==</span> <span class="st">"setosa"</span> <span class="op">~</span> <span class="st">"blue"</span>,
     <span class="va">Species</span> <span class="op">==</span> <span class="st">"versicolor"</span> <span class="op">~</span> <span class="st">"red"</span>,
     <span class="cn">TRUE</span> <span class="op">~</span> <span class="st">"green"</span>
-  <span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span> 
+  <span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> 
   <span class="fu"><a href="../reference/mvdf_simple_material.html">mvdf_simple_material</a></span><span class="op">(</span>
     x <span class="op">=</span> <span class="va">Sepal.Length</span>,
     y <span class="op">=</span> <span class="va">Sepal.Width</span>,
@@ -239,8 +260,8 @@ be on a right-handed coordinate system with Z oriented as the natural
     <span class="co"># Transform colors to an RGBA array</span>
     translate_colors <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> 
 
-<span class="va">iris_material</span> <span class="op">%&gt;%</span> 
-  <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="op">)</span>
+<span class="va">iris_material</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> 
+  <span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="op">)</span>
 <span class="co">#&gt;   diffuse_color metallic roughness   x   y   z idx</span>
 <span class="co">#&gt; 1       0,0,1,1        0         0 5.1 3.5 1.4   1</span>
 <span class="co">#&gt; 2       0,0,1,1        0         0 4.9 3.0 1.4   2</span>
@@ -255,10 +276,10 @@ be on a right-handed coordinate system with Z oriented as the natural
 </ul>
 <p>Now that we have an <code>mvdf_simple_material</code> object, we can use exactly the same code as above to construct our rendering script. Other than changing the object we provide <code>add_mesh_primitive</code>, this code is exactly the same as above – our functions are able to infer what we want from the class of our provided object alone.</p>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">render_script</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/create_blender_frontmatter.html">create_blender_frontmatter</a></span><span class="op">(</span><span class="op">)</span> <span class="op">%&gt;%</span>
+<code class="sourceCode R"><span class="va">render_script</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/create_blender_frontmatter.html">create_blender_frontmatter</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span>
   <span class="fu"><a href="../reference/add_primitive.html">add_mesh_primitive</a></span><span class="op">(</span>object <span class="op">=</span> <span class="va">iris_material</span>, <span class="co"># Replace iris_mvdf here</span>
                      primitive <span class="op">=</span> <span class="st">"cube"</span>,
-                     size <span class="op">=</span> <span class="fl">0.2</span><span class="op">)</span> <span class="op">%&gt;%</span> 
+                     size <span class="op">=</span> <span class="fl">0.2</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> 
   <span class="fu"><a href="../reference/add_blender_endmatter.html">add_blender_endmatter</a></span><span class="op">(</span>filepath <span class="op">=</span> <span class="st">"save_render.blend"</span><span class="op">)</span></code></pre></div>
 <p>We execute it the exact same way:</p>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
@@ -267,8 +288,8 @@ be on a right-handed coordinate system with Z oriented as the natural
 <p><img src="iris_color.jpg" width="100%"></p>
 <p>By creating a specific class from our data, we provide our functions with all the information they need to operate. If we decide that we don’t want to use those fancy colors, we can just cast our data back into <code>mvdf_obj</code> format:</p>
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="../reference/setvalues.html">set_values</a></span><span class="op">(</span><span class="va">iris_material</span>, newclass <span class="op">=</span> <span class="st">"mvdf_obj"</span><span class="op">)</span> <span class="op">%&gt;%</span> 
-  <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="op">)</span>
+<code class="sourceCode R"><span class="fu"><a href="../reference/setvalues.html">set_values</a></span><span class="op">(</span><span class="va">iris_material</span>, newclass <span class="op">=</span> <span class="st">"mvdf_obj"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> 
+  <span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="op">)</span>
 <span class="co">#&gt;     x   y   z idx</span>
 <span class="co">#&gt; 1 5.1 3.5 1.4   1</span>
 <span class="co">#&gt; 2 4.9 3.0 1.4   2</span>
@@ -291,11 +312,13 @@ be on a right-handed coordinate system with Z oriented as the natural
 
 
       <footer><div class="copyright">
-  <p>Developed by Michael Mahoney.</p>
+  <p></p>
+<p>Developed by Michael Mahoney.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.9000.</p>
+  <p></p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link external-link">pkgdown</a> 1.6.1.9001.</p>
 </div>
 
       </footer>
@@ -303,6 +326,8 @@ be on a right-handed coordinate system with Z oriented as the natural
 
   
 
+
+  
 
   </body>
 </html>
