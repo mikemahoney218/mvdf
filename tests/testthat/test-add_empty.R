@@ -20,6 +20,6 @@ test_that("multiplication works", {
 
   expect_match(
     add_empty("", mvdf_obj(NULL, 1, 1, 1), radius = 0.5),
-    "\nbpy.ops.object.empty_add\\(type='PLAIN_AXES', radius=0.5, location=\\(1, 1, 1\\)\\)" # nolint
+    "\nbpy.ops.object.empty_add\\(type='PLAIN_AXES', radius=0.5, location=\\(1, 1, 1\\)\\)\n" # nolint
   )
 })

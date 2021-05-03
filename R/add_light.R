@@ -49,6 +49,7 @@ add_light <- function(script,
     paste0(rotation, collapse = ","),
     "))\n",
     "bpy.context.object.data.energy=",
-    energy
+    energy,
+    "\n"
   )
 }

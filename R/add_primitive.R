@@ -81,7 +81,8 @@ setMethod(
           arguments = arguments
         ),
         sep = "\n"
-      )
+      ),
+      "\n"
     )
   }
 )

@@ -34,6 +34,6 @@ add_camera <- function(script,
     "), rotation=(",
     paste0(rotation, collapse = ","),
     "))\n",
-    "bpy.context.scene.camera = bpy.context.object"
+    "bpy.context.scene.camera = bpy.context.object\n"
   )
 }

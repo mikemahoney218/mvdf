@@ -14,21 +14,43 @@ knitr::opts_chunk$set(
 )
 ```
 
+## Extending `mvdf`
+
+While `mvdf` may be used by itself to generate simple data-defined renders, the 
+main goal of this package is to make it easy to build more complex rendering 
+methods that take advantage of the same set of building blocks to provide a 
+relatively unified and cohesive user interface. To do so, `mvdf` aims to provide
+a translation layer between data frames and exporter functions, which let the 
+user
+
+* Importer functions convert user data into strictly-defined S4 objects
+* Manipulation functions make it easy to adjust S4 objects as needed
+* Exporter functions convert S4 objects into renders
+
+
+## Creating New Classes
+
 ```{r setup}
 library(mvdf)
 ```
 
+## Adding Exporters
+
+## Manipulation Functions
+
+## Reuse Definitions
+
 ```{r}
 library(dplyr)
 tribble(
-  ~ Slot, ~ Class, ~ Package, ~ Description, ~ Units, ~ Class, ~ Unique, ~ Not_missing,
-  "x", "mvdf_obj", "mvdf", 'Distance of the origin of the object from the origin of the grid system (the central point at 0, 0, 0) in meters in the x direction. Coordinates are assumed to be on a right-handed coordinate system with Z oriented as the natural "vertical" direction.', "meters", "Numeric", FALSE, TRUE,
-  "y", "mvdf_obj", "mvdf", 'Distance of the origin of the object from the origin of the grid system (the central point at 0, 0, 0) in meters in the y direction. Coordinates are assumed to be on a right-handed coordinate system with Z oriented as the natural "vertical" direction.', "meters", "Numeric", FALSE, TRUE,
-  "z", "mvdf_obj", "mvdf", 'Distance of the origin of the object from the origin of the grid system (the central point at 0, 0, 0) in meters in the z direction. Coordinates are assumed to be on a right-handed coordinate system with Z oriented as the natural "vertical" direction.', "meters", "Numeric", FALSE, TRUE,
-  "idx", "mvdf_obj", "mvdf", 'A unique identifier (or "index") for each object to be modeled.', NA, "Character", TRUE, TRUE,
-  "diffuse_color", "mvdf_simple_material", "mvdf", "Diffuse color of the material, as an RGBA array of floats scaled from 0-1.", "Character", NA, FALSE, FALSE,
-  "metallic", "mvdf_simple_material", "mvdf", "Amount of mirror reflection for raytrace, as a float from 0-1", "Numeric", "Proportion", FALSE, FALSE,
-  "roughness", "mvdf_simple_material", "mvdf", "Roughness of the material, as a float from 0-1.", "Numeric", "Proportion", FALSE, FALSE
+  ~ Slot, ~ Class, ~ Package, ~ Description, ~ Units, ~ Class, ~ Unique, ~ Must_Provide, ~ Default,
+  "x", "mvdf_obj", "mvdf", 'Distance of the origin of the object from the origin of the grid system (the central point at 0, 0, 0) in meters in the x direction. Coordinates are assumed to be on a right-handed coordinate system with Z oriented as the natural "vertical" direction.', "meters", "Numeric", FALSE, TRUE, NA,
+  "y", "mvdf_obj", "mvdf", 'Distance of the origin of the object from the origin of the grid system (the central point at 0, 0, 0) in meters in the y direction. Coordinates are assumed to be on a right-handed coordinate system with Z oriented as the natural "vertical" direction.', "meters", "Numeric", FALSE, TRUE, NA,
+  "z", "mvdf_obj", "mvdf", 'Distance of the origin of the object from the origin of the grid system (the central point at 0, 0, 0) in meters in the z direction. Coordinates are assumed to be on a right-handed coordinate system with Z oriented as the natural "vertical" direction.', "meters", "Numeric", FALSE, TRUE, NA,
+  "idx", "mvdf_obj", "mvdf", 'A unique identifier (or "index") for each object to be modeled.', NA, "Character", TRUE, FALSE, "Sequential index",
+  "diffuse_color", "mvdf_simple_material", "mvdf", "Diffuse color of the material, as an RGBA array of floats scaled from 0-1.", NA, "Character", FALSE, FALSE, "0.8,0.8,0.8,0.8",
+  "metallic", "mvdf_simple_material", "mvdf", "Amount of mirror reflection for raytrace, as a float from 0-1", "Numeric", "Proportion", FALSE, FALSE, "0",
+  "roughness", "mvdf_simple_material", "mvdf", "Roughness of the material, as a float from 0-1.", "Numeric", "Proportion", FALSE, FALSE, "0"
 )
 ```
 

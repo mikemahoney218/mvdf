@@ -157,4 +157,5 @@ bpy.ops.object.empty_add(type='PLAIN_AXES', location=(3, 6.5, 5.2))
 bpy.ops.object.empty_add(type='PLAIN_AXES', location=(3.4, 6.2, 5.4))
 bpy.ops.object.empty_add(type='PLAIN_AXES', location=(3, 5.9, 5.1))
 
+
 bpy.ops.wm.save_as_mainfile(filepath='tmp.blend')
