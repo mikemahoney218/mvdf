@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# mvdf <a href='https://mikemahoney218.github.io/mvdf'><img src='man/figures/logo.png' align="right" height="138" /></a>
+# mvdf: a standardized approach to using R as a frontend for the Blender 3D rendering program <a href='https://mikemahoney218.github.io/mvdf'><img src='man/figures/logo.png' align="right" height="138" /></a>
 
 <!-- badges: start -->
 
